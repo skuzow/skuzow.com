@@ -1,17 +1,14 @@
 ---
 const navItems = [
   {
-    title: 'About',
     label: 'about',
     url: '/#about'
   },
   {
-    title: 'Projects',
     label: 'projects',
     url: '/#projects'
   },
   {
-    title: 'Contact',
     label: 'contact',
     url: '/#contact'
   }
@@ -19,18 +16,21 @@ const navItems = [
 ---
 
 <header
-  class="w-full h-16 overflow-x-hidden flex justify-center sticky top-0 backdrop-filter backdrop-blur"
+  class="w-full py-2 overflow-x-hidden flex items-center justify-center sticky top-0 backdrop-filter backdrop-blur"
 >
-  <nav class="flex items-center justify-center">
+  <nav class="flex">
     {
       navItems.map((item) => (
-        <a
-          aria-label={item.label}
-          href={item.url}
-          class="relative block px-2 py-2 transition hover:text-yellow-400"
-        >
-          {item.title}
-        </a>
+        <div class="flex items-start justify-start font-header text-2xl md:text-5xl lg:text-7xl">
+          <a
+            aria-label={item.label}
+            href={item.url}
+            class="transition hover:text-secondary"
+          >
+            {item.label}
+          </a>
+          {item !== navItems[navItems.length - 1] && <span>·</span>}
+        </div>
       ))
     }
   </nav>

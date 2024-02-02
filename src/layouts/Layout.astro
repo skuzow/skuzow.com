@@ -24,13 +24,13 @@ const { title, description } = Astro.props;
     <title>{title}</title>
     <ViewTransitions />
   </head>
-  <body class="relative text-white">
-    <!-- background -->
+  <body class="relative text-white bg-background">
+    <!-- background
     <div
       class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-gradient-to-br from-gray-800 via-gray-900 to-black"
     >
-    </div>
-    <div class="w-full mx-auto container lg:max-w-4xl md:max-w-2xl">
+    </div> -->
+    <div class="w-full mx-auto container lg:max-w-6xl md:max-w-4xl">
       <Header />
       <slot />
       <Footer />
