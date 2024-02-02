@@ -1,9 +1,15 @@
 ---
 import Layout from '@/layouts/Layout.astro';
+
+import Welcome from '@/components/landing/Welcome.astro';
 ---
 
-<Layout title="Alejandro Porras">
-	<main>
-		<h1 class="text-6xl">Hello world</h1>
-	</main>
+<Layout
+  title="Alejandro Porras"
+  description="Alejandro Porras personal website"
+>
+  <main class="px-4">
+    <Welcome />
+    <h1 class="text-3xl">:D</h1>
+  </main>
 </Layout>

@@ -1,0 +1,17 @@
+---
+interface Props {
+  message: string;
+  link: string;
+}
+
+const { message, link } = Astro.props;
+---
+
+<a
+  href={link}
+  target="_blank"
+  class="flex flex-row items-center justify-center gap-1 border-2 rounded-xl bg-black p-1"
+>
+  <slot />
+  <p class="text-pretty">{message}</p>
+</a>

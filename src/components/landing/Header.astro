@@ -1,0 +1,37 @@
+---
+const navItems = [
+  {
+    title: 'About',
+    label: 'experiencia',
+    url: '/#experiencia'
+  },
+  {
+    title: 'Projects',
+    label: 'proyects',
+    url: '/#proyects'
+  },
+  {
+    title: 'Contact',
+    label: 'contact',
+    url: '/#contact'
+  }
+];
+---
+
+<header
+  class="w-full h-16 overflow-x-hidden flex justify-center sticky top-0 backdrop-filter backdrop-blur"
+>
+  <nav class="flex items-center justify-center">
+    {
+      navItems.map((item) => (
+        <a
+          aria-label={item.label}
+          href={item.url}
+          class="relative block px-2 py-2 transition hover:text-yellow-400"
+        >
+          {item.title}
+        </a>
+      ))
+    }
+  </nav>
+</header>
