@@ -2,22 +2,20 @@
 import { navItems } from '@/constants/navItems';
 ---
 
-<header class="absolute w-full p-2 md:p-3">
-  <nav id="menu" class="flex flex-col items-end justify-end">
-    {
-      navItems.map(({ label, url }) => (
-        <a
-          aria-label={label}
-          href={url}
-          class="font-header text-2xl transition hover:text-secondary md:text-5xl
+<nav id="menu" class="flex flex-col items-end justify-end">
+  {
+    navItems.map(({ label, url }) => (
+      <a
+        aria-label={label}
+        href={url}
+        class="font-header text-2xl transition hover:text-secondary md:text-5xl
           lg:text-7xl"
-        >
-          {label}
-        </a>
-      ))
-    }
-  </nav>
-</header>
+      >
+        {label}
+      </a>
+    ))
+  }
+</nav>
 
 <script>
   document.addEventListener('astro:page-load', () => {
