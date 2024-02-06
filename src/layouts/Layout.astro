@@ -2,9 +2,9 @@
 import '@fontsource-variable/onest';
 import { ViewTransitions } from 'astro:transitions';
 
-import Background from '@/components/Background.astro';
-import Header from '@/components/landing/Header.astro';
-import Footer from '@/components/landing/Footer.astro';
+import Background from '@/components/common/Background.astro';
+import Header from '@/components/common/Header.astro';
+import Footer from '@/components/common/Footer.astro';
 
 interface Props {
   title: string;
@@ -25,13 +25,16 @@ const { title, description } = Astro.props;
     <title>{title}</title>
     <ViewTransitions />
   </head>
-  <body class="relative text-white bg-background">
+  <body class="relative bg-background text-white">
     <Background />
-    <slot />
-    <div class="w-full mx-auto container lg:max-w-6xl md:max-w-4xl">
-      <!-- <Header /> -->
-      <Footer />
+
+    <slot name="welcome" />
+    <Header />
+    <div class="container mx-auto w-full md:max-w-4xl lg:max-w-6xl">
+      <slot />
     </div>
+    <Footer />
+
     <style is:global>
       :root {
         color-scheme: dark;
