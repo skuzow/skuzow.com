@@ -1,4 +1,6 @@
 ---
+import VerticalLines from '@/components/common/background/VerticalLines.astro';
+
 const navItems = [
   {
     label: 'about',
@@ -16,10 +18,11 @@ const navItems = [
 ---
 
 <header
-  class="sticky top-0 flex w-full items-center justify-center overflow-x-hidden
-  border-y-[1.33px] border-white border-opacity-50 bg-background py-3"
+  class="sticky top-0 overflow-x-hidden border-y-[1.33px] border-white
+  border-opacity-50 bg-background py-3"
 >
-  <nav class="flex">
+  <nav class="flex items-center justify-center">
+    <VerticalLines />
     {
       navItems.map((item) => (
         <div
