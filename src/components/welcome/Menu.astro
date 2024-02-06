@@ -1,0 +1,37 @@
+---
+import { navItems } from '@/constants/navItems';
+---
+
+<header class="absolute w-full p-2 md:p-3">
+  <nav id="menu" class="flex flex-col items-end justify-end">
+    {
+      navItems.map(({ label, url }) => (
+        <a
+          aria-label={label}
+          href={url}
+          class="font-header text-2xl transition hover:text-secondary md:text-5xl
+          lg:text-7xl"
+        >
+          {label}
+        </a>
+      ))
+    }
+  </nav>
+</header>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const navItems = document.querySelectorAll('#menu a');
+
+    navItems.forEach((navItem) => {
+      navItem.addEventListener('mouseover', () => {
+        navItem.textContent = ('·' + navItem.textContent).split(' ').join('');
+      });
+
+      navItem.addEventListener('mouseout', () => {
+        if (navItem.textContent)
+          navItem.textContent = navItem.textContent.slice(1);
+      });
+    });
+  });
+</script>
