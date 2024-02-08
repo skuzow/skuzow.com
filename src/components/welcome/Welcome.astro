@@ -1,10 +1,18 @@
 ---
 import WelcomeHeader from '@/components/welcome/WelcomeHeader.astro';
 import WelcomeTitle from '@/components/welcome/WelcomeTitle.astro';
+import Scrolldown from '@/components/common/spinners/Scrolldown.astro';
 ---
 
-<WelcomeHeader />
-<section class="flex h-[100vh] flex-col items-center justify-center">
-  <WelcomeTitle>Full<span class="text-secondary">Stack</span></WelcomeTitle>
-  <WelcomeTitle><span class="text-secondary">Dev</span>eloper</WelcomeTitle>
+<section class="flex h-screen flex-col justify-between">
+  <div class="flex-1">
+    <WelcomeHeader />
+  </div>
+  <div class="flex flex-1 flex-col items-center justify-center">
+    <WelcomeTitle>Full<span class="text-secondary">Stack</span></WelcomeTitle>
+    <WelcomeTitle><span class="text-secondary">Dev</span>eloper</WelcomeTitle>
+  </div>
+  <div class="flex flex-1 items-end justify-end">
+    <Scrolldown />
+  </div>
 </section>
