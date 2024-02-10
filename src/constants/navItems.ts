@@ -1,14 +1,14 @@
 export const navItems = [
   {
     label: 'about',
-    url: '/#about'
+    url: '#about'
   },
   {
     label: 'projects',
-    url: '/#projects'
+    url: '#projects'
   },
   {
     label: 'contact',
-    url: '/#contact'
+    url: '#contact'
   }
 ];

@@ -33,6 +33,30 @@ const { title, description } = Astro.props;
     <slot />
     <Footer />
 
+    <script>
+      function scrollToSection(id: string) {
+        const section = document.querySelector(id);
+
+        if (section instanceof HTMLElement) {
+          window.scrollTo({
+            top:
+              section.offsetTop -
+              document.getElementById('header')!.offsetHeight,
+            behavior: 'smooth'
+          });
+        }
+      }
+
+      document.querySelectorAll('header nav a').forEach((link) => {
+        link.addEventListener('click', (event) => {
+          event.preventDefault();
+
+          const targetId = link.getAttribute('href');
+          if (targetId) scrollToSection(targetId);
+        });
+      });
+    </script>
+
     <style is:global>
       @tailwind components;
 
