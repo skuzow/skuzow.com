@@ -36,6 +36,8 @@ const { title, description } = Astro.props;
     <Footer />
 
     <style is:global>
+      @tailwind components;
+
       :root {
         color-scheme: dark;
       }
@@ -48,6 +50,12 @@ const { title, description } = Astro.props;
       @media (prefers-reduced-motion: reduce) {
         html {
           scroll-behavior: auto;
+        }
+      }
+
+      @layer components {
+        .text-welcome {
+          @apply text-2xl md:text-5xl 2xl:text-7xl;
         }
       }
     </style>

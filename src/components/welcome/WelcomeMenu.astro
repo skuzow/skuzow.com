@@ -2,15 +2,13 @@
 import { navItems } from '@/constants/navItems';
 ---
 
-<nav id="menu" class="flex flex-col items-end justify-end">
+<nav
+  id="menu"
+  class="text-welcome flex flex-col items-end justify-end font-header"
+>
   {
     navItems.map(({ label, url }) => (
-      <a
-        aria-label={label}
-        href={url}
-        class="font-header text-2xl transition hover:text-secondary md:text-5xl
-        2xl:text-7xl"
-      >
+      <a aria-label={label} href={url} class="transition hover:text-secondary">
         {label}
       </a>
     ))
