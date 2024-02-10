@@ -13,7 +13,10 @@ const titleLowerCase = title.toLowerCase();
   data-section={titleLowerCase}
   class="border-b-[1.33px] border-white border-opacity-50 py-10 md:py-11"
 >
-  <div class="mx-auto md:max-w-4xl lg:max-w-6xl">
+  <div
+    class="mx-auto max-w-xs sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-6xl
+    2xl:max-w-[90rem]"
+  >
     <h2 class="text-welcome flex justify-center pb-2 md:pb-3">{title}</h2>
     <div class="text-info text-justify">
       <slot />
