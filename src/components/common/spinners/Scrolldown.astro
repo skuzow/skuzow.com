@@ -1,5 +1,7 @@
 ---
-const items = [];
+import Marquee from '@/components/common/spinners/Marquee.astro';
+
+const items: string[] = [];
 
 for (let i = 0; i < 5; i++) {
   items.push('scrolldown');
@@ -7,28 +9,10 @@ for (let i = 0; i < 5; i++) {
 ---
 
 <div class="relative flex overflow-x-hidden pb-2 font-title md:pb-3">
-  <div class="animate-marquee1 flex flex-row whitespace-nowrap">
-    {
-      items.map((item) => (
-        <div
-          class="mx-1 text-2xl md:mx-[0.4rem] md:text-5xl 2xl:mx-2 2xl:text-7xl
-        [&>span]:text-secondary"
-        >
-          · {item} · <span>{item}</span>
-        </div>
-      ))
-    }
+  <div class="animate-marquee1">
+    <Marquee items={items} />
   </div>
-  <div class="animate-marquee2 absolute flex flex-row whitespace-nowrap">
-    {
-      items.map((item) => (
-        <div
-          class="mx-1 text-2xl md:mx-[0.4rem] md:text-5xl 2xl:mx-2 2xl:text-7xl
-        [&>span]:text-secondary"
-        >
-          · {item} · <span>{item}</span>
-        </div>
-      ))
-    }
+  <div class="absolute animate-marquee2">
+    <Marquee items={items} />
   </div>
 </div>
