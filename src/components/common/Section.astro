@@ -1,0 +1,20 @@
+---
+interface Section {
+  title: string;
+}
+
+const { title } = Astro.props;
+
+const titleLowerCase = title.toLowerCase();
+---
+
+<section
+  id={titleLowerCase}
+  data-section={titleLowerCase}
+  class="border-b-[1.33px] border-white border-opacity-50 p-2 md:p-3"
+>
+  <h2 class="text-welcome mb-2 md:mb-3">{title}</h2>
+  <div class="text-info mx-auto text-justify md:max-w-4xl lg:max-w-6xl">
+    <slot />
+  </div>
+</section>

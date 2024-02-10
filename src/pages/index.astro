@@ -2,6 +2,9 @@
 import Layout from '@/layouts/Layout.astro';
 
 import Welcome from '@/components/welcome/Welcome.astro';
+import About from '@/components/sections/About.astro';
+import Projects from '@/components/sections/Projects.astro';
+import Contact from '@/components/sections/Contact.astro';
 ---
 
 <Layout
@@ -10,20 +13,9 @@ import Welcome from '@/components/welcome/Welcome.astro';
 >
   <Welcome slot="welcome" />
 
-  <main class="px-4">
-    <h1 class="flex items-center justify-center text-9xl text-white">test</h1>
-    <h1 class="text-9xl text-white">test</h1>
-    <h1 class="text-9xl text-white">test</h1>
-    <h1 class="text-9xl text-white">test</h1>
-    <h1 class="text-9xl text-white">test</h1>
-    <h1 class="text-9xl text-white">test</h1>
-    <h1 class="text-9xl text-white">test</h1>
-    <h1 class="text-9xl text-white">test</h1>
-    <h1 class="text-9xl text-white">test</h1>
-    <h1 class="text-9xl text-white">test</h1>
-    <h1 class="text-9xl text-white">test</h1>
-    <h1 class="text-9xl text-white">test</h1>
-    <h1 class="text-9xl text-white">test</h1>
-    <h1 class="text-9xl text-white">test</h1>
+  <main class="w-full">
+    <About />
+    <Projects />
+    <Contact />
   </main>
 </Layout>
