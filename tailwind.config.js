@@ -9,8 +9,8 @@ export default {
         secondary: '#FAFF00'
       },
       fontFamily: {
-        header: ['Geist Mono Medium', 'system-ui', 'sans-serif'],
-        title: ['Geist Medium', 'system-ui', 'sans-serif']
+        header: ['GeistMono-Medium', 'system-ui', 'sans-serif'],
+        title: ['Geist-Medium', 'system-ui', 'sans-serif']
       },
       animation: {
         marquee1: 'marquee1 25s linear infinite',
