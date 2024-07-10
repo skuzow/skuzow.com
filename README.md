@@ -1,6 +1,6 @@
-# 🐈‍⬛ skuzow.com
+# 👻 skuzow.com
 
-[![license](https://img.shields.io/github/license/skuzow/skuzow.com.svg)](https://github.com/skuzow/skuzow.com/blob/master/LICENSE)
+[![license](https://img.shields.io/github/license/skuzow/skuzow.com.svg)](https://github.com/skuzow/skuzow.com/blob/main/LICENSE)
 
 Personal website.
 

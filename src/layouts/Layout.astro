@@ -1,90 +1,51 @@
 ---
-import '@fontsource-variable/onest';
-import { ViewTransitions } from 'astro:transitions';
-
-import Background from '@/components/common/background/Background.astro';
-import Header from '@/components/common/Header.astro';
-import Footer from '@/components/common/Footer.astro';
-
 interface Props {
   title: string;
-  description: string;
 }
 
-const { title, description } = Astro.props;
+const { title } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content={description} />
+    <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    <ViewTransitions />
   </head>
-  <body class="relative bg-background text-white">
-    <Background />
-
-    <slot name="welcome" />
-    <Header />
+  <body>
     <slot />
-    <Footer />
-
-    <script>
-      function scrollToSection(id: string) {
-        const section = document.querySelector(id);
-
-        if (section instanceof HTMLElement) {
-          window.scrollTo({
-            top:
-              section.offsetTop -
-              document.getElementById('header')!.offsetHeight,
-            behavior: 'smooth'
-          });
-        }
-      }
-
-      document.querySelectorAll('header nav a').forEach((link) => {
-        link.addEventListener('click', (event) => {
-          event.preventDefault();
-
-          const targetId = link.getAttribute('href');
-          if (targetId) scrollToSection(targetId);
-        });
-      });
-    </script>
-
-    <style is:global>
-      @tailwind components;
-
-      :root {
-        color-scheme: dark;
-      }
-
-      html {
-        font-family: 'Onest Variable', system-ui, sans-serif;
-        scroll-behavior: smooth;
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        html {
-          scroll-behavior: auto;
-        }
-      }
-
-      @layer components {
-        /* welcome header, scrolldown, header, section title */
-        .text-welcome {
-          @apply text-2xl md:text-5xl 2xl:text-7xl;
-        }
-        /* section info */
-        .text-info {
-          @apply text-lg md:text-2xl 2xl:text-3xl;
-        }
-      }
-    </style>
   </body>
 </html>
+<style is:global>
+  :root {
+    --accent: 136, 58, 234;
+    --accent-light: 224, 204, 250;
+    --accent-dark: 49, 10, 101;
+    --accent-gradient: linear-gradient(
+      45deg,
+      rgb(var(--accent)),
+      rgb(var(--accent-light)) 30%,
+      white 60%
+    );
+  }
+  html {
+    font-family: system-ui, sans-serif;
+    background: #13151a;
+    background-size: 224px;
+  }
+  code {
+    font-family:
+      Menlo,
+      Monaco,
+      Lucida Console,
+      Liberation Mono,
+      DejaVu Sans Mono,
+      Bitstream Vera Sans Mono,
+      Courier New,
+      monospace;
+  }
+</style>
