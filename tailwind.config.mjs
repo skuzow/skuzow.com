@@ -1,4 +1,5 @@
 import animate from 'tailwindcss-animate';
+import { fontFamily } from 'tailwindcss/defaultTheme';
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -81,6 +82,10 @@ export default {
         'accordion-up': 'accordion-up 0.2s ease-out',
         'collapsible-down': 'collapsible-down 0.2s ease-in-out',
         'collapsible-up': 'collapsible-up 0.2s ease-in-out'
+      },
+      fontFamily: {
+        sans: ['Geist', ...fontFamily.sans],
+        mono: ['GeistMono-Semibold', ...fontFamily.mono]
       }
     }
   },
