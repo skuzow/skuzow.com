@@ -1,0 +1,28 @@
+---
+import { cn } from '@/lib/utils';
+
+interface Props {
+  href: string;
+  title: string;
+  newTab?: boolean;
+  underline?: boolean;
+  class?: string;
+}
+
+const {
+  href,
+  title,
+  newTab = true,
+  underline = true,
+  class: className
+} = Astro.props;
+---
+
+<a
+  href={href}
+  title={title}
+  aria-label={title}
+  target={newTab ? '_blank' : '_self'}
+  rel="noopener noreferrer"
+  class={cn(underline ? 'underline' : '', className)}><slot /></a
+>

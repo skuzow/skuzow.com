@@ -1,0 +1,50 @@
+---
+import { Image } from 'astro:assets';
+import { Linkedin, Github, Sun } from 'lucide-vue-next';
+
+import ButtonHover from '@/components/common/ButtonHover.astro';
+import Link from '@/components/common/Link.astro';
+---
+
+<header transition:persist class="sticky top-0 mb-2 py-4 backdrop-blur-md">
+  <nav class="container flex w-full max-w-4xl flex-1 flex-row justify-between">
+    <Link
+      href="/"
+      title="skuzow.com"
+      newTab={false}
+      underline={false}
+      class="flex items-center gap-3"
+    >
+      <Image
+        src="/logo.avif"
+        alt="logo"
+        width="40"
+        height="40"
+        loading="eager"
+        class="rounded-full"
+      />
+      <span class="font-mono hover:underline">skuzow.com</span>
+    </Link>
+
+    <div class="flex items-center gap-1">
+      <ButtonHover>
+        <Link
+          href="https://www.linkedin.com/in/alejandro-porras-torrecilla"
+          title="LinkedIn"
+        >
+          <Linkedin size={20} />
+        </Link>
+      </ButtonHover>
+
+      <ButtonHover>
+        <Link href="https://github.com/skuzow" title="Github">
+          <Github size={20} />
+        </Link>
+      </ButtonHover>
+
+      <ButtonHover>
+        <Sun size={20} />
+      </ButtonHover>
+    </div>
+  </nav>
+</header>
