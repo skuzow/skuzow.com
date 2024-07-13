@@ -5,7 +5,7 @@ interface Props {
   href: string;
   title: string;
   newTab?: boolean;
-  underline?: boolean;
+  styled?: boolean;
   class?: string;
 }
 
@@ -13,7 +13,7 @@ const {
   href,
   title,
   newTab = true,
-  underline = true,
+  styled = true,
   class: className
 } = Astro.props;
 ---
@@ -24,5 +24,6 @@ const {
   aria-label={title}
   target={newTab ? '_blank' : '_self'}
   rel="noopener noreferrer"
-  class={cn(underline ? 'underline' : '', className)}><slot /></a
+  class={cn(styled ? 'underline hover:text-muted-foreground' : '', className)}
+  ><slot /></a
 >
