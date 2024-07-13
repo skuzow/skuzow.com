@@ -1,5 +1,20 @@
-<h1>
-  Hi, I'm Alex, <span class="font-semibold">Software Engineer</span> in process from
-  Madrid, Spain.<br class="hidden md:flex" />
-  Focused on full stack web development, minimal design lover.
-</h1>
+---
+import { Mail } from 'lucide-vue-next';
+
+import Button from '@/components/ui/button/Button.vue';
+---
+
+<section id="hero" data-section="hero">
+  <h1 class="mb-3">
+    Hi, I'm Alex. <span class="font-semibold">Software Engineer</span> in process
+    from Madrid, Spain.
+    <br class="hidden md:flex" />
+    Focused on full stack web development, minimal design lover.
+  </h1>
+
+  <form action="mailto:hello@skuzow.com" method="post">
+    <Button class="gap-2 font-mono">
+      <Mail size={18} /> Contact
+    </Button>
+  </form>
+</section>

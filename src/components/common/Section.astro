@@ -8,8 +8,9 @@ const { id, title } = Astro.props;
 ---
 
 <section id={id} data-section={id}>
-  <h2 class="mb-5 text-xl">
+  <h2 class="mb-5 text-xl font-semibold">
     ▼<span class="font-mono"> {title.toUpperCase()}</span>
   </h2>
+
   <slot />
 </section>
