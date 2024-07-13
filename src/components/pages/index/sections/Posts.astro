@@ -1,0 +1,15 @@
+---
+import Section from '@/components/common/Section.astro';
+
+import { type SectionItem } from '@/constants/sectionItems';
+
+interface Props {
+  sectionItem: SectionItem;
+}
+
+const { sectionItem } = Astro.props;
+---
+
+<Section id={sectionItem.label} title="posts">
+  <p>posts content</p>
+</Section>

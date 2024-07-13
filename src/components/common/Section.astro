@@ -1,0 +1,15 @@
+---
+interface Props {
+  id: string;
+  title: string;
+}
+
+const { id, title } = Astro.props;
+---
+
+<section id={id} data-section={id}>
+  <h2 class="mb-5 text-xl">
+    ▼<span class="font-mono"> {title.toUpperCase()}</span>
+  </h2>
+  <slot />
+</section>

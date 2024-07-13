@@ -26,10 +26,12 @@ const { title, description } = Astro.props;
     <ViewTransitions />
   </head>
   <body
-    class="relative flex min-h-screen flex-col scroll-smooth py-4 motion-safe:scroll-auto md:py-6"
+    class="relative min-h-screen scroll-smooth py-4 motion-safe:scroll-auto md:py-6"
   >
     <Header />
-    <main class="container max-w-4xl flex-1">
+    <main
+      class="container flex max-w-4xl flex-1 flex-col gap-10 py-4 duration-500 animate-in fade-in-20 slide-in-from-bottom-2"
+    >
       <slot />
     </main>
     <Footer />

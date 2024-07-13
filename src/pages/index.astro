@@ -1,13 +1,21 @@
 ---
 import Layout from '@/layouts/Layout.astro';
 
-import Button from '@/components/ui/button/Button.vue';
+import Hero from '@/components/pages/index/Hero.astro';
+import Projects from '@/components/pages/index/sections/Projects.astro';
+import Experience from '@/components/pages/index/sections/Experience.astro';
+import Posts from '@/components/pages/index/sections/Posts.astro';
+
+import { SECTION_ITEMS } from '@/constants/sectionItems';
 ---
 
 <Layout
   title="Alejandro Porras - skuzow.com"
   description="Alejandro Porras Personal Website. Software Engineering Student"
 >
-  <h1 class="text-xl">Hello Tailwind</h1>
-  <Button>Shadcn Button!</Button>
+  <Hero />
+
+  <Projects sectionItem={SECTION_ITEMS[0]!} />
+  <Experience sectionItem={SECTION_ITEMS[1]!} />
+  <Posts sectionItem={SECTION_ITEMS[2]!} />
 </Layout>
