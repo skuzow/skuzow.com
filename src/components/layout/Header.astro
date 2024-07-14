@@ -27,21 +27,21 @@ import Link from '@/components/common/Link.astro';
     </Link>
 
     <div class="flex items-center gap-1">
-      <ButtonHover>
-        <Link
-          href="https://www.linkedin.com/in/alejandro-porras-torrecilla"
-          title="LinkedIn"
-          styled={false}
-        >
+      <Link
+        href="https://www.linkedin.com/in/alejandro-porras-torrecilla"
+        title="LinkedIn"
+        styled={false}
+      >
+        <ButtonHover>
           <Linkedin size={20} />
-        </Link>
-      </ButtonHover>
+        </ButtonHover>
+      </Link>
 
-      <ButtonHover>
-        <Link href="https://github.com/skuzow" title="Github" styled={false}>
+      <Link href="https://github.com/skuzow" title="Github" styled={false}>
+        <ButtonHover>
           <Github size={20} />
-        </Link>
-      </ButtonHover>
+        </ButtonHover>
+      </Link>
 
       <ButtonHover>
         <Sun size={20} />
