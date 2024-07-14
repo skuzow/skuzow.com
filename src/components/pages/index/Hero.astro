@@ -1,6 +1,7 @@
 ---
 import { Mail } from 'lucide-vue-next';
 
+import Link from '@/components/common/Link.astro';
 import Button from '@/components/ui/button/Button.vue';
 ---
 
@@ -12,9 +13,14 @@ import Button from '@/components/ui/button/Button.vue';
     Focused on full stack web development, minimal design lover.
   </h1>
 
-  <form action="mailto:hello@skuzow.com" method="post">
+  <Link
+    href="mailto:hello@skuzow.com"
+    title="contact-email"
+    newTab={false}
+    styled={false}
+  >
     <Button class="gap-2 font-mono">
       <Mail size={18} /> Contact
     </Button>
-  </form>
+  </Link>
 </section>
