@@ -1,0 +1,23 @@
+---
+import Link from '@/components/common/Link.astro';
+import Badge from '@/components/ui/badge/Badge.vue';
+
+import { type Technology } from '@/constants/technologies';
+
+interface Props {
+  technology: Technology;
+}
+
+const { technology } = Astro.props;
+---
+
+<Link
+  href={technology.website}
+  title=`${technology.title}-technology`
+  styled={false}
+>
+  <Badge variant="secondary" class="flex cursor-pointer gap-1 font-mono">
+    <technology.icon size={12} />
+    {technology.title}
+  </Badge>
+</Link>

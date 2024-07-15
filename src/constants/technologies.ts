@@ -7,12 +7,12 @@ interface Technologies {
 }
 
 export interface Technology {
-  icon: (_props: TechnologyProps) => any;
+  icon: (_props: TechnologyIconProps) => any;
   title: string;
   website: string;
 }
 
-export interface TechnologyProps {
+export interface TechnologyIconProps {
   size?: number;
 }
 
