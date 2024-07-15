@@ -1,5 +1,7 @@
 ---
 import Link from '@/components/common/Link.astro';
+
+const currentYear: number = new Date().getFullYear();
 ---
 
 <footer transition:persist class="py-4">
@@ -16,7 +18,7 @@ import Link from '@/components/common/Link.astro';
       <Link href="mailto:hello@skuzow.com" title="contact-email" newTab={false}>
         Contact
       </Link>
-      Alejandro Porras · 2024
+      Alejandro Porras · {currentYear}
     </span>
   </nav>
 </footer>
