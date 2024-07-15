@@ -1,15 +1,16 @@
 ---
 import Section from '@/components/common/Section.astro';
+import Project from '@/components/pages/index/Project.astro';
 
-import { type SectionItem } from '@/constants/sectionItems';
+import { PROJECTS, type Project as ProjectItem } from '@/constants/projects';
 
-interface Props {
-  sectionItem: SectionItem;
-}
+import { type SectionProps as Props } from '@/constants/sections';
 
-const { sectionItem } = Astro.props;
+const { section } = Astro.props;
 ---
 
-<Section id={sectionItem.label} title="projects">
-  <p>projects content</p>
+<Section id={section.label} title="projects">
+  <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+    {PROJECTS.map((project: ProjectItem) => <Project project={project} />)}
+  </div>
 </Section>

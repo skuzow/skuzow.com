@@ -1,11 +1,16 @@
 ---
 import { Mail } from 'lucide-vue-next';
 
+import Section from '@/components/common/Section.astro';
 import Link from '@/components/common/Link.astro';
 import Button from '@/components/ui/button/Button.vue';
+
+import { type SectionProps as Props } from '@/constants/sections';
+
+const { section } = Astro.props;
 ---
 
-<section id="hero" data-section="hero" class="flex flex-col gap-3">
+<Section id={section.label} class="flex flex-col gap-3">
   <h1>
     Hi, I'm Alex. <span class="font-semibold">Software Engineer</span> in process
     from Madrid, Spain.
@@ -23,4 +28,4 @@ import Button from '@/components/ui/button/Button.vue';
       <Mail size={18} /> Contact
     </Button>
   </Link>
-</section>
+</Section>

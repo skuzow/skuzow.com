@@ -1,21 +1,20 @@
 ---
 import Layout from '@/layouts/Layout.astro';
 
-import Hero from '@/components/pages/index/Hero.astro';
+import About from '@/components/pages/index/sections/About.astro';
 import Projects from '@/components/pages/index/sections/Projects.astro';
 import Experience from '@/components/pages/index/sections/Experience.astro';
 import Posts from '@/components/pages/index/sections/Posts.astro';
 
-import { SECTION_ITEMS } from '@/constants/sectionItems';
+import { SECTIONS } from '@/constants/sections';
 ---
 
 <Layout
   title="Alejandro Porras - skuzow.com"
   description="Alejandro Porras Personal Website. Software Engineering Student"
 >
-  <Hero />
-
-  <Projects sectionItem={SECTION_ITEMS[0]!} />
-  <Experience sectionItem={SECTION_ITEMS[1]!} />
-  <Posts sectionItem={SECTION_ITEMS[2]!} />
+  <About section={SECTIONS.about!} />
+  <Projects section={SECTIONS.projects!} />
+  <Experience section={SECTIONS.experience!} />
+  <Posts section={SECTIONS.posts!} />
 </Layout>

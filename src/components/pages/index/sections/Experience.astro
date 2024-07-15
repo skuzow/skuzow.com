@@ -1,15 +1,11 @@
 ---
 import Section from '@/components/common/Section.astro';
 
-import { type SectionItem } from '@/constants/sectionItems';
+import { type SectionProps as Props } from '@/constants/sections';
 
-interface Props {
-  sectionItem: SectionItem;
-}
-
-const { sectionItem } = Astro.props;
+const { section } = Astro.props;
 ---
 
-<Section id={sectionItem.label} title="experience">
+<Section id={section.label} title="experience">
   <p>experience content</p>
 </Section>

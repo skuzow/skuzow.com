@@ -1,0 +1,82 @@
+---
+import { Image } from 'astro:assets';
+import { Code, Link as LinkIcon } from 'lucide-vue-next';
+
+import Badge from '@/components/ui/badge/Badge.vue';
+import Link from '@/components/common/Link.astro';
+import ButtonHover from '@/components/common/ButtonHover.astro';
+
+import { type Project } from '@/constants/projects';
+import { type Technology } from '@/constants/technologies';
+
+interface Props {
+  project: Project;
+}
+
+const { project } = Astro.props;
+---
+
+<div class="flex max-w-[25.313rem] flex-col gap-2">
+  <div class="relative">
+    <Image
+      src={project.image}
+      alt=`${project.title}`
+      width="405"
+      height="324"
+      loading="eager"
+    />
+
+    <div class="absolute bottom-2 right-2 flex gap-2">
+      {
+        project.tecnologies.map((technology: Technology) => (
+          <Link
+            href={technology.website}
+            title=`${technology.title}-technology`
+            styled={false}
+          >
+            <Badge variant="secondary" class="font-mono cursor-pointer flex gap-1">
+              <technology.icon size={12} />
+              {technology.title}
+            </Badge>
+          </Link>
+        ))
+      }
+    </div>
+  </div>
+
+  <div class="flex justify-between">
+    <div>
+      <h3 class="font-mono font-semibold">{project.title}</h3>
+      <p class="text-sm">{project.description}</p>
+    </div>
+
+    <div class="flex gap-1">
+      {
+        project.repository && (
+          <Link
+            href={project.repository}
+            title=`${project.title}-repository`
+            styled={false}
+          >
+            <ButtonHover>
+              <Code size={18} />
+            </ButtonHover>
+          </Link>
+        )
+      }
+      {
+        project.website && (
+          <Link
+            href={project.website}
+            title=`${project.title}-website`
+            styled={false}
+          >
+            <ButtonHover>
+              <LinkIcon size={18} />
+            </ButtonHover>
+          </Link>
+        )
+      }
+    </div>
+  </div>
+</div>
