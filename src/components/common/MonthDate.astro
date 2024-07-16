@@ -1,9 +1,10 @@
 ---
 interface Props {
   date: Date;
+  class?: string;
 }
 
-const { date } = Astro.props;
+const { date, class: className } = Astro.props;
 
 let month: number | string = date.getMonth() + 1;
 if (month < 10) month = `0${month}`;
@@ -11,6 +12,6 @@ if (month < 10) month = `0${month}`;
 const year: number = date.getFullYear();
 ---
 
-<time datetime=`${year}-${month}`>
+<time datetime=`${year}-${month}` class={className}>
   {month}/{year}
 </time>
