@@ -3,8 +3,8 @@ import Layout from '@/layouts/Layout.astro';
 
 import About from '@/components/pages/index/sections/About.astro';
 import Projects from '@/components/pages/index/sections/Projects.astro';
-import Experience from '@/components/pages/index/sections/Experience.astro';
-import Posts from '@/components/pages/index/sections/Posts.astro';
+import Experiences from '@/components/pages/index/sections/Experiences.astro';
+// import Posts from '@/components/pages/index/sections/Posts.astro';
 
 import { SECTIONS } from '@/constants/sections';
 ---
@@ -15,6 +15,6 @@ import { SECTIONS } from '@/constants/sections';
 >
   <About section={SECTIONS.about!} />
   <Projects section={SECTIONS.projects!} />
-  <Experience section={SECTIONS.experience!} />
-  <Posts section={SECTIONS.posts!} />
+  <Experiences section={SECTIONS.experiences!} />
+  <!-- <Posts section={SECTIONS.posts!} /> -->
 </Layout>

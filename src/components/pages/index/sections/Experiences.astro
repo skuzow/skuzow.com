@@ -1,0 +1,21 @@
+---
+import Section from '@/components/common/Section.astro';
+import Experience from '@/components/pages/index/Experience.astro';
+
+import {
+  EXPERIENCES,
+  type Experience as ExperienceType
+} from '@/constants/experiences';
+
+import { type SectionProps as Props } from '@/constants/sections';
+
+const { section } = Astro.props;
+---
+
+<Section id={section.label} title="experience">
+  {
+    EXPERIENCES.map((experience: ExperienceType) => (
+      <Experience experience={experience} />
+    ))
+  }
+</Section>

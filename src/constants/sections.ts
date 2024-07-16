@@ -20,7 +20,7 @@ export const SECTIONS: Sections = {
     url: '/#projects',
     label: 'projects'
   },
-  experience: {
+  experiences: {
     url: '/#experience',
     label: 'experience'
   },

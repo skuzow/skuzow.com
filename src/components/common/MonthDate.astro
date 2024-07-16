@@ -1,0 +1,16 @@
+---
+interface Props {
+  date: Date;
+}
+
+const { date } = Astro.props;
+
+let month: number | string = date.getMonth() + 1;
+if (month < 10) month = `0${month}`;
+
+const year: number = date.getFullYear();
+---
+
+<time datetime=`${year}-${month}`>
+  {month}/{year}
+</time>

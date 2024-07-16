@@ -1,0 +1,50 @@
+---
+import MonthDate from '@/components/common/MonthDate.astro';
+import Link from '@/components/common/Link.astro';
+import Technology from '@/components/pages/index/Technology.astro';
+
+import { type Experience } from '@/constants/experiences';
+import { type Technology as TechnologyType } from '@/constants/technologies';
+
+interface Props {
+  experience: Experience;
+}
+
+const { experience } = Astro.props;
+---
+
+<div class="grid grid-cols-[auto,1fr] gap-7">
+  <div class="w-0.5 bg-foreground">▶</div>
+
+  <div>
+    <p class="mb-3 font-mono">
+      <MonthDate date={experience.startDate} />
+      -
+      {experience.endDate ? <MonthDate date={experience.endDate} /> : 'Present'}
+    </p>
+
+    <h3 class="font-mono font-semibold">{experience.title}</h3>
+    <p class="mb-2 text-sm">
+      <Link
+        href={experience.website}
+        title={experience.company}
+        styled={false}
+        class="hover:underline"
+      >
+        {experience.company}
+      </Link>
+      -
+      {experience.type}
+    </p>
+
+    <p class="mb-3 text-sm">{experience.description}</p>
+
+    <div class="mb-6 flex gap-2">
+      {
+        experience.tecnologies.map((technology: TechnologyType) => (
+          <Technology technology={technology} />
+        ))
+      }
+    </div>
+  </div>
+</div>
