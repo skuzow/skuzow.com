@@ -1,5 +1,5 @@
 ---
-import { Mail } from 'lucide-vue-next';
+import { Mail, MailOpen } from 'lucide-vue-next';
 
 import Section from '@/components/common/Section.astro';
 import Link from '@/components/common/Link.astro';
@@ -10,6 +10,25 @@ import { type SectionProps as Props } from '@/constants/sections';
 const { section } = Astro.props;
 ---
 
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const contactButton = document.getElementById('contact-button')!;
+
+    const mailIcon = document.getElementById('mail-icon')!;
+    const mailOpenIcon = document.getElementById('mail-open-icon')!;
+
+    contactButton.addEventListener('mouseover', () => {
+      mailIcon.classList.add('hidden');
+      mailOpenIcon.classList.remove('hidden');
+    });
+
+    contactButton.addEventListener('mouseout', () => {
+      mailOpenIcon.classList.add('hidden');
+      mailIcon.classList.remove('hidden');
+    });
+  });
+</script>
+
 <Section id={section.label}>
   <h1 class="mb-3">
     Hi, I'm Alex. <span class="font-semibold">Software Engineer</span> in process
@@ -19,13 +38,16 @@ const { section } = Astro.props;
   </h1>
 
   <Link
+    id="contact-button"
     href="mailto:hello@skuzow.com"
     title="contact-email"
     newTab={false}
     styled={false}
   >
     <Button class="gap-2 font-mono">
-      <Mail size={18} /> Contact
+      <Mail id="mail-icon" size={16} />
+      <MailOpen id="mail-open-icon" size={16} class="hidden" />
+      Contact
     </Button>
   </Link>
 </Section>
