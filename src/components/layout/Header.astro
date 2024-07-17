@@ -13,15 +13,15 @@ import ButtonHover from '@/components/common/ButtonHover.astro';
       title="skuzow.com"
       newTab={false}
       styled={false}
-      class="flex items-center gap-3"
+      class="flex items-center gap-2.5"
     >
       <Image
         src="/logo.avif"
         alt="logo"
-        width="40"
-        height="40"
+        width="34"
+        height="34"
         loading="eager"
-        class="rounded-full"
+        class="rounded-md"
       />
       <span class="font-mono hover:underline">skuzow.com</span>
     </Link>
@@ -33,18 +33,18 @@ import ButtonHover from '@/components/common/ButtonHover.astro';
         styled={false}
       >
         <ButtonHover>
-          <Linkedin size={20} />
+          <Linkedin size={18} />
         </ButtonHover>
       </Link>
 
       <Link href="https://github.com/skuzow" title="Github" styled={false}>
         <ButtonHover>
-          <Github size={20} />
+          <Github size={18} />
         </ButtonHover>
       </Link>
 
       <ButtonHover>
-        <Sun size={20} />
+        <Sun size={18} />
       </ButtonHover>
     </div>
   </nav>
