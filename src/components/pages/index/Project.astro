@@ -4,7 +4,7 @@ import { Code, Link as LinkIcon } from 'lucide-vue-next';
 
 import Technology from '@/components/pages/index/Technology.astro';
 import Link from '@/components/common/Link.astro';
-import ButtonHover from '@/components/common/ButtonHover.astro';
+import { Button } from '@/components/ui/button';
 
 import { type Project } from '@/constants/projects';
 import { type Technology as TechnologyType } from '@/constants/technologies';
@@ -49,9 +49,9 @@ const { project } = Astro.props;
             title=`${project.title}-repository`
             styled={false}
           >
-            <ButtonHover>
+            <Button variant="ghost" size="icon">
               <Code size={18} />
-            </ButtonHover>
+            </Button>
           </Link>
         )
       }
@@ -62,9 +62,9 @@ const { project } = Astro.props;
             title=`${project.title}-website`
             styled={false}
           >
-            <ButtonHover>
+            <Button variant="ghost" size="icon">
               <LinkIcon size={18} />
-            </ButtonHover>
+            </Button>
           </Link>
         )
       }

@@ -3,7 +3,7 @@ import { Image } from 'astro:assets';
 import { Linkedin, Github, Sun } from 'lucide-vue-next';
 
 import Link from '@/components/common/Link.astro';
-import ButtonHover from '@/components/common/ButtonHover.astro';
+import { Button } from '@/components/ui/button';
 ---
 
 <header transition:persist class="sticky top-0 z-10 py-4 backdrop-blur-md">
@@ -32,20 +32,20 @@ import ButtonHover from '@/components/common/ButtonHover.astro';
         title="LinkedIn"
         styled={false}
       >
-        <ButtonHover>
+        <Button variant="ghost" size="icon">
           <Linkedin size={18} />
-        </ButtonHover>
+        </Button>
       </Link>
 
       <Link href="https://github.com/skuzow" title="Github" styled={false}>
-        <ButtonHover>
+        <Button variant="ghost" size="icon">
           <Github size={18} />
-        </ButtonHover>
+        </Button>
       </Link>
 
-      <ButtonHover>
+      <Button variant="ghost" size="icon">
         <Sun size={18} />
-      </ButtonHover>
+      </Button>
     </div>
   </nav>
 </header>
