@@ -41,16 +41,17 @@ const { project } = Astro.props;
       <p class="text-sm">{project.description}</p>
     </div>
 
-    <div class="flex gap-1">
+    <div class="flex items-start gap-1">
       {
         project.repository && (
           <Link
             href={project.repository}
-            title=`${project.title}-repository`
+            title={project.title + '-repository'}
             styled={false}
           >
             <Button variant="ghost" size="icon">
               <Code size={18} />
+              <span class="sr-only">{project.title} repository</span>
             </Button>
           </Link>
         )
@@ -59,11 +60,12 @@ const { project } = Astro.props;
         project.website && (
           <Link
             href={project.website}
-            title=`${project.title}-website`
+            title={project.title + '-website'}
             styled={false}
           >
             <Button variant="ghost" size="icon">
               <LinkIcon size={18} />
+              <span class="sr-only">{project.title} website</span>
             </Button>
           </Link>
         )
