@@ -10,25 +10,6 @@ import { type SectionProps as Props } from '@/constants/sections';
 const { section } = Astro.props;
 ---
 
-<script>
-  document.addEventListener('astro:page-load', () => {
-    const contactButton = document.getElementById('contact-button')!;
-
-    const mailIcon = document.getElementById('mail-icon')!;
-    const mailOpenIcon = document.getElementById('mail-open-icon')!;
-
-    contactButton.addEventListener('mouseover', () => {
-      mailIcon.classList.add('hidden');
-      mailOpenIcon.classList.remove('hidden');
-    });
-
-    contactButton.addEventListener('mouseout', () => {
-      mailOpenIcon.classList.add('hidden');
-      mailIcon.classList.remove('hidden');
-    });
-  });
-</script>
-
 <Section id={section.label}>
   <h1 class="mb-3">
     Hi, I'm Alex. <span class="font-semibold">Software Engineer</span> in process
@@ -51,3 +32,22 @@ const { section } = Astro.props;
     </Button>
   </Link>
 </Section>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const contactButton = document.getElementById('contact-button')!;
+
+    const mailIcon = document.getElementById('mail-icon')!;
+    const mailOpenIcon = document.getElementById('mail-open-icon')!;
+
+    contactButton.addEventListener('mouseover', () => {
+      mailIcon.classList.add('hidden');
+      mailOpenIcon.classList.remove('hidden');
+    });
+
+    contactButton.addEventListener('mouseout', () => {
+      mailOpenIcon.classList.add('hidden');
+      mailIcon.classList.remove('hidden');
+    });
+  });
+</script>
