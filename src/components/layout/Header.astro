@@ -10,6 +10,7 @@ import ThemeToggle from '@/components/layout/ThemeToggle.vue';
 <header transition:persist class="sticky top-0 z-10 py-4 backdrop-blur-md">
   <nav class="container flex max-w-4xl flex-1 justify-between">
     <Link
+      id="scroll-top"
       href="/"
       title="skuzow.com"
       newTab={false}
@@ -50,6 +51,19 @@ import ThemeToggle from '@/components/layout/ThemeToggle.vue';
     </div>
   </nav>
 </header>
+
+<script>
+  const scrollTop = document.getElementById('scroll-top')!;
+
+  scrollTop.addEventListener('click', (event) => {
+    event.preventDefault();
+
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+</script>
 
 <script is:inline>
   const getThemePreference = () => {
