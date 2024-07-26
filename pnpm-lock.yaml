@@ -17,6 +17,9 @@ importers:
       '@astrojs/vue':
         specifier: ^4.5.0
         version: 4.5.0(astro@4.11.5(typescript@5.5.3))(rollup@4.18.1)(vite@5.3.3)(vue@3.4.31(typescript@5.5.3))
+      '@vueuse/core':
+        specifier: ^10.11.0
+        version: 10.11.0(vue@3.4.31(typescript@5.5.3))
       astro:
         specifier: ^4.11.5
         version: 4.11.5(typescript@5.5.3)
