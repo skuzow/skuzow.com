@@ -20,7 +20,8 @@ const { project } = Astro.props;
   <div class="relative">
     <Image
       src={project.image}
-      alt=`${project.title}`
+      alt={project.title}
+      title={project.title}
       width="405"
       height="324"
       loading="eager"
