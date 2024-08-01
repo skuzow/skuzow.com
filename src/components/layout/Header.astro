@@ -17,26 +17,25 @@ import ThemeToggle from '@/components/layout/ThemeToggle.vue';
       href="/"
       title="skuzow.com"
       newTab={false}
-      styled={false}
       class="flex items-center gap-2.5"
     >
       <Image
         src="/logo.avif"
-        alt="logo"
-        title="logo"
+        alt="Logo"
+        title="Logo"
         width="34"
         height="34"
         loading="eager"
         class="rounded-md"
       />
-      <span class="font-mono font-medium hover:underline">skuzow.com</span>
+      <span class="font-mono font-medium">skuzow.com</span>
     </Link>
 
     <div class="flex items-center gap-1">
       <Link
         href="https://www.linkedin.com/in/alejandro-porras-torrecilla"
         title="LinkedIn"
-        styled={false}
+        underline={false}
       >
         <Button variant="ghost" size="icon">
           <Linkedin size={18} />
@@ -44,7 +43,7 @@ import ThemeToggle from '@/components/layout/ThemeToggle.vue';
         </Button>
       </Link>
 
-      <Link href="https://github.com/skuzow" title="Github" styled={false}>
+      <Link href="https://github.com/skuzow" title="Github" underline={false}>
         <Button variant="ghost" size="icon">
           <Github size={18} />
           <span class="sr-only">Github</span>

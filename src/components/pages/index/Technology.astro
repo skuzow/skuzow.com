@@ -11,11 +11,7 @@ interface Props {
 const { technology } = Astro.props;
 ---
 
-<Link
-  href={technology.website}
-  title=`${technology.title}-technology`
-  styled={false}
->
+<Link href={technology.website} title={technology.title} underline={false}>
   <Badge variant="secondary" class="gap-1.5 font-mono">
     <technology.icon size={14} />
     {technology.title}

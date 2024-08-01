@@ -28,12 +28,7 @@ const { experience } = Astro.props;
 
     <h3 class="font-mono font-bold">{experience.title}</h3>
     <p class="mb-2 text-sm font-medium">
-      <Link
-        href={experience.website}
-        title={experience.company}
-        styled={false}
-        class="hover:underline"
-      >
+      <Link href={experience.website} title={experience.company}>
         {experience.company}
       </Link>
       -

@@ -47,8 +47,8 @@ const { project } = Astro.props;
         project.repository && (
           <Link
             href={project.repository}
-            title={project.title + '-repository'}
-            styled={false}
+            title={project.title + ' Repository'}
+            underline={false}
           >
             <Button variant="ghost" size="icon">
               <Code size={18} />
@@ -61,8 +61,8 @@ const { project } = Astro.props;
         project.website && (
           <Link
             href={project.website}
-            title={project.title + '-website'}
-            styled={false}
+            title={project.title + ' Website'}
+            underline={false}
           >
             <Button variant="ghost" size="icon">
               <LinkIcon size={18} />
