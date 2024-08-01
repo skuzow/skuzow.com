@@ -86,7 +86,7 @@ export default {
       },
       fontFamily: {
         sans: ['Geist', ...fontFamily.sans],
-        mono: ['GeistMono-Medium', ...fontFamily.mono]
+        mono: ['Geist Mono', ...fontFamily.mono]
       }
     }
   },

@@ -32,7 +32,7 @@ const mode = useColorMode();
         <span class="sr-only">Toggle theme</span>
       </Button>
     </DropdownMenuTrigger>
-    <DropdownMenuContent align="end" class="font-mono">
+    <DropdownMenuContent align="end" class="font-mono font-medium">
       <DropdownMenuItem
         @click="mode = Theme.LIGHT"
         class="cursor-pointer gap-2"
