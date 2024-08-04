@@ -20,13 +20,13 @@ const { experience } = Astro.props;
   </div>
 
   <div>
-    <p class="mb-3 font-mono font-medium">
+    <p class="mb-3 font-mono">
       <MonthDate date={experience.startDate} />
       -
       {experience.endDate ? <MonthDate date={experience.endDate} /> : 'Present'}
     </p>
 
-    <h3 class="font-mono font-bold">{experience.title}</h3>
+    <h3 class="font-mono font-semibold">{experience.title}</h3>
     <p class="mb-2 text-sm font-medium">
       <Link href={experience.website} title={experience.company}>
         {experience.company}

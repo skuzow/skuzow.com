@@ -9,9 +9,11 @@ export interface Project {
   website?: string;
 }
 
+const PROJECT_IMAGES_PATH: string = '/images/projects';
+
 export const PROJECTS: Project[] = [
   {
-    image: '/projects/disneyland-resort.webp',
+    image: `${PROJECT_IMAGES_PATH}/disneyland-resort.webp`,
     tecnologies: [TECHNOLOGIES.astro!],
     title: 'DisneyLand Resort',
     description: 'Promotional website.',
@@ -19,7 +21,7 @@ export const PROJECTS: Project[] = [
     website: 'https://multimedia-prac3.vercel.app'
   },
   {
-    image: '/projects/alist.webp',
+    image: `${PROJECT_IMAGES_PATH}/alist.webp`,
     tecnologies: [TECHNOLOGIES.angular!, TECHNOLOGIES.spring!],
     title: 'Alist',
     description: 'Top based social network.',
