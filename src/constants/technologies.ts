@@ -1,8 +1,8 @@
-import AstroIcon from '@/components/icons/AstroIcon.astro';
-import VueIcon from '@/components/icons/VueIcon.astro';
-import AngularIcon from '@/components/icons/AngularIcon.astro';
-import NETCoreIcon from '@/components/icons/NETCoreIcon.astro';
-import SpringIcon from '@/components/icons/SpringIcon.astro';
+import AstroIcon from '@/components/icons/technologies/AstroIcon.astro';
+import VueIcon from '@/components/icons/technologies/VueIcon.astro';
+import AngularIcon from '@/components/icons/technologies/AngularIcon.astro';
+import NETCoreIcon from '@/components/icons/technologies/NETCoreIcon.astro';
+import SpringIcon from '@/components/icons/technologies/SpringIcon.astro';
 
 interface Technologies {
   [key: string]: Technology;
