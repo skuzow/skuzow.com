@@ -1,7 +1,7 @@
 ---
-import { Image } from 'astro:assets';
 import { Code, Link as LinkIcon } from 'lucide-vue-next';
 
+import Picture from '@/components/common/Picture.astro';
 import Technology from '@/components/pages/index/Technology.astro';
 import Link from '@/components/common/Link.astro';
 import { Button } from '@/components/ui/button';
@@ -18,12 +18,11 @@ const { project } = Astro.props;
 
 <div class="flex max-w-[25.313rem] flex-col gap-2">
   <div class="relative">
-    <Image
+    <Picture
       src={project.image}
       alt={project.title}
-      title={project.title}
-      width="405"
-      height="324"
+      width={405}
+      height={324}
       loading="eager"
     />
 

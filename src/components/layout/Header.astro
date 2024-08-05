@@ -1,10 +1,12 @@
 ---
-import { Image } from 'astro:assets';
 import { Linkedin, Github } from 'lucide-vue-next';
 
 import Link from '@/components/common/Link.astro';
+import Picture from '@/components/common/Picture.astro';
 import { Button } from '@/components/ui/button';
 import ThemeToggle from '@/components/layout/ThemeToggle.vue';
+
+import logoImage from '@/images/logo.webp';
 ---
 
 <header
@@ -19,12 +21,11 @@ import ThemeToggle from '@/components/layout/ThemeToggle.vue';
       newTab={false}
       class="flex items-center gap-2.5"
     >
-      <Image
-        src="/images/logo.avif"
+      <Picture
+        src={logoImage}
         alt="Logo"
-        title="Logo"
-        width="34"
-        height="34"
+        width={34}
+        height={34}
         loading="eager"
         class="rounded-md"
       />

@@ -1,0 +1,35 @@
+---
+import { Picture as PictureAstro } from 'astro:assets';
+
+interface Props {
+  src: ImageMetadata;
+  alt: string;
+  width: number;
+  height: number;
+  densities?: number[];
+  loading?: 'eager';
+  class?: string;
+}
+
+const {
+  src,
+  alt,
+  width,
+  height,
+  densities = [2],
+  loading,
+  class: className
+} = Astro.props;
+---
+
+<PictureAstro
+  src={src}
+  alt={alt}
+  title={alt}
+  width={width}
+  height={height}
+  densities={densities}
+  formats={['avif', 'webp']}
+  loading={loading}
+  class={className}
+/>

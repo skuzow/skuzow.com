@@ -1,7 +1,12 @@
+import type { ImageMetadata } from 'astro';
+
 import { TECHNOLOGIES, type Technology } from '@/constants/technologies';
 
+import disneylandResortImage from '@/images/projects/disneyland-resort.webp';
+import alistImage from '@/images/projects/alist.webp';
+
 export interface Project {
-  image: string;
+  image: ImageMetadata;
   tecnologies: Technology[];
   title: string;
   description: string;
@@ -9,11 +14,9 @@ export interface Project {
   website?: string;
 }
 
-const PROJECT_IMAGES_PATH: string = '/images/projects';
-
 export const PROJECTS: Project[] = [
   {
-    image: `${PROJECT_IMAGES_PATH}/disneyland-resort.webp`,
+    image: disneylandResortImage,
     tecnologies: [TECHNOLOGIES.astro!],
     title: 'DisneyLand Resort',
     description: 'Promotional website.',
@@ -21,7 +24,7 @@ export const PROJECTS: Project[] = [
     website: 'https://multimedia-prac3.vercel.app'
   },
   {
-    image: `${PROJECT_IMAGES_PATH}/alist.webp`,
+    image: alistImage,
     tecnologies: [TECHNOLOGIES.angular!, TECHNOLOGIES.spring!],
     title: 'Alist',
     description: 'Top based social network.',
