@@ -25,7 +25,6 @@ const {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
 
     <link
@@ -43,36 +42,42 @@ const {
       crossorigin
     />
 
+    <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#0B0A0B" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="mask-icon" href="/favicon.svg" color="#FFFFFF" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <link rel="canonical" href={new URL(canonical, Astro.url)} />
     <meta name="description" content={description} />
+    <meta name="author" content="Alejandro Porras - skuzow" />
     <meta
       name="keywords"
       content="Alejandro Porras, skuzow, portfolio, blog, minimalist"
     />
-    <meta name="author" content="Alejandro Porras - skuzow" />
-    <link rel="canonical" href={new URL(canonical, Astro.url)} />
 
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@skuzow" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:site" content="@skuzow" />
     <meta name="twitter:creator" content="@skuzow" />
     <!-- <meta name="twitter:image" content={new URL(image, Astro.url)} />
     <meta name="twitter:image:alt" content={title} /> -->
 
     <meta property="og:locale" content="en_EN" />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content={new URL(canonical, Astro.url)} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <!-- <meta property="og:image" content={new URL(image, Astro.url)} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" /> -->
     <meta property="og:site_name" content={title} />
-    <meta property="og:url" content={new URL(canonical, Astro.url)} />
 
     <meta name="robots" content="index, follow" />
     <meta name="googlebot" content="index, follow" />
 
-    <meta name="generator" content={Astro.generator} />
     <ViewTransitions />
   </head>
   <body class="relative flex min-h-screen flex-col gap-2 py-4 md:py-6">
