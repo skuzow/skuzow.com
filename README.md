@@ -65,7 +65,7 @@ npm install -g pnpm
 pnpm install
 ```
 
-3. Run development server:
+3. Run the development server:
 
 ```bash
 pnpm dev
