@@ -20,7 +20,7 @@
     </a>
 </div>
 
-<p/>
+<br/>
 
 <div align="center">
 
@@ -34,10 +34,10 @@
 <div align="center">
 
 [![License](https://img.shields.io/github/license/skuzow/skuzow.com.svg)](https://github.com/skuzow/skuzow.com/blob/main/LICENSE)
-![GitHub Issues](https://img.shields.io/github/issues/skuzow/skuzow.com)
-![GitHub PRs](https://img.shields.io/github/issues-pr/skuzow/skuzow.com)
-![GitHub Stars](https://img.shields.io/github/stars/skuzow/skuzow.com)
-![GitHub Forks](https://img.shields.io/github/forks/skuzow/skuzow.com)
+[![GitHub Issues](https://img.shields.io/github/issues/skuzow/skuzow.com)](https://github.com/skuzow/skuzow.com/issues)
+[![GitHub PRs](https://img.shields.io/github/issues-pr/skuzow/skuzow.com)](https://github.com/skuzow/skuzow.com/pulls)
+[![GitHub Forks](https://img.shields.io/github/forks/skuzow/skuzow.com)](https://github.com/skuzow/skuzow.com/forks)
+[![GitHub Stars](https://img.shields.io/github/stars/skuzow/skuzow.com)](https://github.com/skuzow/skuzow.com/stargazers)
 
 </div>
 
@@ -49,7 +49,7 @@
 - [**Tailwind CSS**](https://tailwindcss.com) - A utility-first CSS framework for rapidly building custom designs.
 - [**shadcn-vue**](https://www.shadcn-vue.com) - Beautifully designed components for Vue.
 - [**Lucide Icons**](https://lucide.dev) - Beautiful & consistent icons.
-- [**Prettier**](https://prettier.io) + [prettier-plugin-astro](https://www.npmjs.com/package/prettier-plugin-astro) + [prettier-plugin-tailwindcss](https://github.com/tailwindlabs/prettier-plugin-tailwindcss) - An opinionated code formatter.
+- [**Prettier**](https://prettier.io) + [prettier-plugin-astro](https://github.com/withastro/prettier-plugin-astro) + [prettier-plugin-tailwindcss](https://github.com/tailwindlabs/prettier-plugin-tailwindcss) - An opinionated code formatter.
 
 ## 🚀 Contribute
 
