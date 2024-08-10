@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useColorMode } from '@vueuse/core';
+import { ref, onMounted, watch } from 'vue';
 import { Sun, Moon, LaptopMinimal } from 'lucide-vue-next';
 
 import {
@@ -16,7 +16,26 @@ enum Theme {
   SYSTEM = 'auto'
 }
 
-const mode = useColorMode();
+const theme = ref<Theme>();
+
+const isDarkPreference = () =>
+  window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+const modifyDarkClass = (isDark: boolean) =>
+  document.documentElement.classList[isDark ? 'add' : 'remove']('dark');
+
+onMounted(() => (theme.value = localStorage.getItem('theme') ?? Theme.SYSTEM));
+
+watch(theme, () => {
+  if (theme.value === Theme.SYSTEM) {
+    modifyDarkClass(isDarkPreference());
+    return localStorage.removeItem('theme');
+  }
+
+  const isDark: boolean = theme.value === Theme.DARK;
+  modifyDarkClass(isDark);
+  localStorage.setItem('theme', theme.value);
+});
 </script>
 
 <template>
@@ -34,18 +53,21 @@ const mode = useColorMode();
     </DropdownMenuTrigger>
     <DropdownMenuContent align="end" class="font-mono font-medium">
       <DropdownMenuItem
-        @click="mode = Theme.LIGHT"
+        @click="theme = Theme.LIGHT"
         class="cursor-pointer gap-2"
       >
         <Sun :size="16" />
         Light
       </DropdownMenuItem>
-      <DropdownMenuItem @click="mode = Theme.DARK" class="cursor-pointer gap-2">
+      <DropdownMenuItem
+        @click="theme = Theme.DARK"
+        class="cursor-pointer gap-2"
+      >
         <Moon :size="16" />
         Dark
       </DropdownMenuItem>
       <DropdownMenuItem
-        @click="mode = Theme.SYSTEM"
+        @click="theme = Theme.SYSTEM"
         class="cursor-pointer gap-2"
       >
         <LaptopMinimal :size="16" />

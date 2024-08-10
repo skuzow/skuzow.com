@@ -14,7 +14,6 @@
     "@astrojs/sitemap": "^3.1.6",
     "@astrojs/tailwind": "^5.1.0",
     "@astrojs/vue": "^4.5.0",
-    "@vueuse/core": "^10.11.0",
     "astro": "^4.12.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
