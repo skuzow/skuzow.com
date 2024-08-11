@@ -39,19 +39,19 @@ const { section } = Astro.props;
 
 <script>
   document.addEventListener('astro:page-load', () => {
-    const contactButton = document.getElementById('contact-button')!;
+    const contactButton = document.getElementById('contact-button');
 
-    const mailIcon = document.getElementById('mail-icon')!;
-    const mailOpenIcon = document.getElementById('mail-open-icon')!;
+    const mailIcon = document.getElementById('mail-icon');
+    const mailOpenIcon = document.getElementById('mail-open-icon');
 
-    contactButton.addEventListener('mouseover', () => {
-      mailIcon.classList.add('hidden');
-      mailOpenIcon.classList.remove('hidden');
+    contactButton?.addEventListener('mouseover', () => {
+      mailIcon?.classList.add('hidden');
+      mailOpenIcon?.classList.remove('hidden');
     });
 
-    contactButton.addEventListener('mouseout', () => {
-      mailOpenIcon.classList.add('hidden');
-      mailIcon.classList.remove('hidden');
+    contactButton?.addEventListener('mouseout', () => {
+      mailOpenIcon?.classList.add('hidden');
+      mailIcon?.classList.remove('hidden');
     });
   });
 </script>

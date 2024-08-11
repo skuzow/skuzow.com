@@ -12,7 +12,7 @@ import logoImage from '@/images/logo.webp';
 <header class="sticky top-0 z-10 bg-header py-4 backdrop-blur-md">
   <nav class="container flex max-w-4xl flex-1 justify-between">
     <Link
-      id="scroll-top"
+      id="main-header-link"
       href="/"
       title="skuzow.com"
       newTab={false}
@@ -54,14 +54,18 @@ import logoImage from '@/images/logo.webp';
 </header>
 
 <script>
-  const scrollTop = document.getElementById('scroll-top')!;
+  document.addEventListener('astro:page-load', () => {
+    const mainHeaderLink = document.getElementById('main-header-link');
 
-  scrollTop.addEventListener('click', (event) => {
-    event.preventDefault();
+    mainHeaderLink?.addEventListener('click', (event) => {
+      const isHomePage: boolean = window.location.pathname === '/';
+      if (!isHomePage) return;
 
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
+      event.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
     });
   });
 </script>
