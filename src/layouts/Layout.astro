@@ -82,13 +82,13 @@ const {
     <ViewTransitions />
   </head>
   <body class="relative flex min-h-screen flex-col gap-2 py-4 md:py-6">
-    <Header />
+    <Header transition:persist="header" />
     <main
       class="container flex max-w-4xl flex-1 flex-col gap-10 py-4 duration-500 animate-in fade-in-20 slide-in-from-bottom-2"
     >
       <slot />
     </main>
-    <Footer />
+    <Footer transition:persist="footer" />
 
     <style is:global>
       :root {
