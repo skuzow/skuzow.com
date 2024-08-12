@@ -1,0 +1,28 @@
+<script is:inline>
+  const getThemePreference = () => {
+    if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+      return localStorage.getItem('theme');
+    }
+
+    return window.matchMedia('(prefers-color-scheme: dark)').matches
+      ? 'dark'
+      : 'light';
+  };
+
+  const modifyDarkClass = (isDark) =>
+    document.documentElement.classList[isDark ? 'add' : 'remove']('dark');
+
+  const isDark = getThemePreference() === 'dark';
+  modifyDarkClass(isDark);
+
+  if (typeof localStorage !== 'undefined') {
+    const listener = ({ matches }) => {
+      if (localStorage.getItem('theme')) return;
+      modifyDarkClass(matches);
+    };
+
+    window
+      .matchMedia('(prefers-color-scheme: dark)')
+      .addEventListener('change', listener);
+  }
+</script>
