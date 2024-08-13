@@ -28,8 +28,6 @@ const {
     <meta name="viewport" content="width=device-width" />
     <title>{title}</title>
 
-    <ThemeHandler />
-
     <link
       rel="preload"
       href="/fonts/GeistVF.woff2"
@@ -83,6 +81,7 @@ const {
     <meta name="googlebot" content="index, follow" />
 
     <ViewTransitions />
+    <ThemeHandler />
   </head>
   <body class="relative flex min-h-screen flex-col gap-2 py-4 md:py-6">
     <Header transition:persist="header" />
