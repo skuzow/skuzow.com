@@ -9,16 +9,10 @@ import Footer from '@/components/layout/Footer.astro';
 interface Props {
   title: string;
   description: string;
-  canonical?: string;
   image?: string;
 }
 
-const {
-  title,
-  description,
-  canonical = '',
-  image = '/images/website.png'
-} = Astro.props;
+const { title, description, image = '/images/website.png' } = Astro.props;
 ---
 
 <!doctype html>
@@ -50,7 +44,7 @@ const {
     <link rel="mask-icon" href="/favicon.svg" color="#FFFFFF" />
     <link rel="sitemap" href="/sitemap-index.xml" />
 
-    <link rel="canonical" href={new URL(canonical, Astro.url)} />
+    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.url)} />
     <meta name="description" content={description} />
     <meta name="author" content="Alejandro Porras - skuzow" />
     <meta
@@ -68,7 +62,7 @@ const {
 
     <meta property="og:locale" content="en_EN" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={new URL(canonical, Astro.url)} />
+    <meta property="og:url" content={new URL(Astro.url.pathname, Astro.url)} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={new URL(image, Astro.url)} />
