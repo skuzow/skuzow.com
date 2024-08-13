@@ -12,9 +12,9 @@ import logoImage from '@/images/logo.webp';
 <header class="sticky top-0 z-10 bg-header py-4 backdrop-blur-md">
   <nav class="container flex max-w-4xl flex-1 justify-between">
     <Link
-      id="main-header-link"
+      id="home-link"
       href="/"
-      title="skuzow.com"
+      title="Home"
       newTab={false}
       class="flex items-center gap-2.5"
     >
@@ -55,9 +55,9 @@ import logoImage from '@/images/logo.webp';
 
 <script>
   document.addEventListener('astro:page-load', () => {
-    const mainHeaderLink = document.getElementById('main-header-link');
+    const homeLink = document.getElementById('home-link');
 
-    mainHeaderLink?.addEventListener('click', (event) => {
+    homeLink?.addEventListener('click', (event) => {
       const isHomePage: boolean = window.location.pathname === '/';
       if (!isHomePage) return;
 
