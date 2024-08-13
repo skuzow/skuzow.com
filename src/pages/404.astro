@@ -3,13 +3,14 @@ import { Home } from 'lucide-vue-next';
 
 import Layout from '@/layouts/Layout.astro';
 
+import Section from '@/components/common/Section.astro';
 import LogoIcon from '@/components/icons/LogoIcon.astro';
 import Link from '@/components/common/Link.astro';
 import { Button } from '@/components/ui/button';
 ---
 
 <Layout title="404: Not Found - skuzow.com" description="404 Page Not Found">
-  <section class="flex flex-col items-center gap-5">
+  <Section id="404" class="flex flex-col items-center gap-5">
     <LogoIcon size={240} class="rotate-45 md:size-80" />
 
     <div class="flex gap-5 font-mono">
@@ -33,5 +34,5 @@ import { Button } from '@/components/ui/button';
         </Link>
       </div>
     </div>
-  </section>
+  </Section>
 </Layout>
