@@ -5,6 +5,7 @@ import { ViewTransitions } from 'astro:transitions';
 import ThemeHandler from '@/components/layout/ThemeHandler.astro';
 import Header from '@/components/layout/Header.astro';
 import Footer from '@/components/layout/Footer.astro';
+import ScrollTop from '@/components/layout/ScrollTop.astro';
 
 interface Props {
   title: string;
@@ -85,6 +86,8 @@ const { title, description, image = '/images/website.png' } = Astro.props;
       <slot />
     </main>
     <Footer transition:persist="footer" />
+
+    <ScrollTop />
 
     <style is:global>
       :root {

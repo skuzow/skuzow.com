@@ -1,0 +1,41 @@
+---
+import { ArrowUpRight } from 'lucide-vue-next';
+
+import { Button } from '@/components/ui/button';
+---
+
+<Button
+  variant="outline"
+  size="icon"
+  class="scroll-top-button pointer-events-none fixed bottom-4 right-4 opacity-0 transition-opacity duration-300 ease-in-out"
+>
+  <ArrowUpRight size={18} />
+  <span class="sr-only">Scroll top</span>
+</Button>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const scrollTopButton = document.querySelector('.scroll-top-button');
+
+    const manageScrollTopButtonDisplay = () => {
+      if (window.scrollY > 0) {
+        scrollTopButton?.classList.add('opacity-100', 'pointer-events-auto');
+        scrollTopButton?.classList.remove('opacity-0', 'pointer-events-none');
+      } else {
+        scrollTopButton?.classList.add('opacity-0', 'pointer-events-none');
+        scrollTopButton?.classList.remove('opacity-100', 'pointer-events-auto');
+      }
+    };
+
+    manageScrollTopButtonDisplay();
+
+    window.addEventListener('scroll', () => manageScrollTopButtonDisplay());
+
+    scrollTopButton?.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  });
+</script>
