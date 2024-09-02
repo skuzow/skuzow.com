@@ -1,3 +1,23 @@
+@font-face {
+  font-family: 'Geist';
+  src: url('/fonts/GeistVF.woff2') format('woff2');
+  font-weight: 400 600;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GeistMono';
+  src: url('/fonts/GeistMonoVF.woff2') format('woff2');
+  font-weight: 400 600;
+  font-display: swap;
+  font-style: normal;
+}
+
+:root {
+  color-scheme: light dark;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -75,20 +95,4 @@
   body {
     @apply bg-background text-foreground;
   }
-}
-
-@font-face {
-  font-family: 'Geist';
-  src: url('/fonts/GeistVF.woff2') format('woff2');
-  font-weight: 400 600;
-  font-display: swap;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'GeistMono';
-  src: url('/fonts/GeistMonoVF.woff2') format('woff2');
-  font-weight: 400 600;
-  font-display: swap;
-  font-style: normal;
 }
