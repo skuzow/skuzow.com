@@ -16,7 +16,7 @@ enum Theme {
   SYSTEM = 'auto'
 }
 
-const theme = ref<Theme>();
+const theme = ref<string>('');
 
 const isDarkPreference = () =>
   window.matchMedia('(prefers-color-scheme: dark)').matches;
