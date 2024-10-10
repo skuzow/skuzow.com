@@ -14,6 +14,11 @@ interface Props {
 }
 
 const { title, description, image = '/images/website.png' } = Astro.props;
+
+const fullTitle: string = `${title} - skuzow.com`;
+
+const websiteURL: URL = new URL(Astro.url.pathname, Astro.url);
+const imageURL: URL = new URL(image, Astro.url);
 ---
 
 <!doctype html>
@@ -21,7 +26,7 @@ const { title, description, image = '/images/website.png' } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>{title}</title>
+    <title>{fullTitle}</title>
 
     <link
       rel="preload"
@@ -45,7 +50,7 @@ const { title, description, image = '/images/website.png' } = Astro.props;
     <link rel="mask-icon" href="/favicon.svg" color="#FFFFFF" />
     <link rel="sitemap" href="/sitemap-index.xml" />
 
-    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.url)} />
+    <link rel="canonical" href={websiteURL} />
     <meta name="description" content={description} />
     <meta name="author" content="Alejandro Porras - skuzow" />
     <meta
@@ -55,22 +60,22 @@ const { title, description, image = '/images/website.png' } = Astro.props;
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@skuzow" />
-    <meta name="twitter:title" content={title} />
+    <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:creator" content="@skuzow" />
-    <meta name="twitter:image" content={new URL(image, Astro.url)} />
-    <meta name="twitter:image:alt" content={title} />
+    <meta name="twitter:image" content={imageURL} />
+    <meta name="twitter:image:alt" content={fullTitle} />
 
     <meta property="og:locale" content="en_EN" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={new URL(Astro.url.pathname, Astro.url)} />
-    <meta property="og:title" content={title} />
+    <meta property="og:url" content={websiteURL} />
+    <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={new URL(image, Astro.url)} />
+    <meta property="og:image" content={imageURL} />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:site_name" content={title} />
+    <meta property="og:site_name" content={fullTitle} />
 
     <meta name="robots" content="index, follow" />
     <meta name="googlebot" content="index, follow" />
