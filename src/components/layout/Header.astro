@@ -2,11 +2,9 @@
 import { Linkedin, Github } from 'lucide-vue-next';
 
 import Link from '@/components/common/Link.astro';
-import Picture from '@/components/common/Picture.astro';
+import LogoIcon from '@/components/icons/LogoIcon.astro';
 import { Button } from '@/components/ui/button';
 import ThemeToggle from '@/components/layout/ThemeToggle.vue';
-
-import logoImage from '@/images/logo.webp';
 ---
 
 <header class="sticky top-0 z-10 bg-header py-4 backdrop-blur-md">
@@ -18,14 +16,7 @@ import logoImage from '@/images/logo.webp';
       newTab={false}
       class="flex items-center gap-2.5"
     >
-      <Picture
-        src={logoImage}
-        alt="Logo"
-        width={34}
-        height={34}
-        loading="eager"
-        class="rounded-md"
-      />
+      <LogoIcon size={30} />
       <span class="font-mono font-medium">skuzow.com</span>
     </Link>
 
