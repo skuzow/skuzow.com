@@ -12,7 +12,7 @@ const importantProjects: ProjectType[] = PROJECTS.slice(0, 2);
 ---
 
 <Section id={section.label} title="projects">
-  <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+  <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
     {
       importantProjects.map((project: ProjectType) => (
         <Project project={project} />
