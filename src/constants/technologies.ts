@@ -1,4 +1,5 @@
 import AstroIcon from '@/components/icons/technologies/AstroIcon.astro';
+import NuxtIcon from '@/components/icons/technologies/NuxtIcon.astro';
 import VueIcon from '@/components/icons/technologies/VueIcon.astro';
 import AngularIcon from '@/components/icons/technologies/AngularIcon.astro';
 import NETCoreIcon from '@/components/icons/technologies/NETCoreIcon.astro';
@@ -23,6 +24,11 @@ export const TECHNOLOGIES: Technologies = {
     icon: AstroIcon,
     title: 'Astro',
     website: 'https://astro.build'
+  },
+  nuxt: {
+    icon: NuxtIcon,
+    title: 'Nuxt',
+    website: 'https://nuxt.com'
   },
   vue: {
     icon: VueIcon,

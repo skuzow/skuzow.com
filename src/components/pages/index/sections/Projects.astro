@@ -7,10 +7,16 @@ import { PROJECTS, type Project as ProjectType } from '@/constants/projects';
 import { type SectionProps as Props } from '@/constants/sections';
 
 const { section } = Astro.props;
+
+const importantProjects: ProjectType[] = PROJECTS.slice(0, 2);
 ---
 
 <Section id={section.label} title="projects">
   <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
-    {PROJECTS.map((project: ProjectType) => <Project project={project} />)}
+    {
+      importantProjects.map((project: ProjectType) => (
+        <Project project={project} />
+      ))
+    }
   </div>
 </Section>
