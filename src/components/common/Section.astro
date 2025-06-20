@@ -13,9 +13,13 @@ const { id, title, class: className } = Astro.props;
 <section id={id} data-section={id} class={className}>
   {
     title && (
-      <div class="mb-5 flex items-center gap-3">
-        <TriangleIcon size={18} class="rotate-180" />
-        <h2 class="font-mono text-xl font-semibold">{title.toUpperCase()}</h2>
+      <div class="mb-5 flex justify-between">
+        <div class="flex items-center gap-3">
+          <TriangleIcon size={18} class="rotate-180" />
+          <h2 class="font-mono text-xl font-semibold">{title.toUpperCase()}</h2>
+        </div>
+
+        <slot name="title-button" />
       </div>
     )
   }
