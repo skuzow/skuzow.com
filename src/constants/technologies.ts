@@ -2,6 +2,7 @@ import AstroIcon from '@/components/icons/technologies/AstroIcon.astro';
 import NuxtIcon from '@/components/icons/technologies/NuxtIcon.astro';
 import VueIcon from '@/components/icons/technologies/VueIcon.astro';
 import AngularIcon from '@/components/icons/technologies/AngularIcon.astro';
+import HonoIcon from '@/components/icons/technologies/HonoIcon.astro';
 import NETCoreIcon from '@/components/icons/technologies/NETCoreIcon.astro';
 import SpringIcon from '@/components/icons/technologies/SpringIcon.astro';
 
@@ -39,6 +40,11 @@ export const TECHNOLOGIES: Technologies = {
     icon: AngularIcon,
     title: 'Angular',
     website: 'https://angular.dev'
+  },
+  hono: {
+    icon: HonoIcon,
+    title: 'Hono',
+    website: 'https://hono.dev'
   },
   netcore: {
     icon: NETCoreIcon,

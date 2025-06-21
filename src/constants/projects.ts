@@ -4,6 +4,7 @@ import { TECHNOLOGIES, type Technology } from '@/constants/technologies';
 
 import quizImage from '@/images/projects/quiz.webp';
 import alistImage from '@/images/projects/alist.webp';
+import quizAiImage from '@/images/projects/quiz-ai.webp';
 import disneylandResortImage from '@/images/projects/disneyland-resort.webp';
 
 export interface Project {
@@ -30,6 +31,14 @@ export const PROJECTS: Project[] = [
     title: 'Alist',
     description: 'Top based social network.',
     repository: 'https://github.com/CodeURJC-DAW-2022-23/webapp1'
+  },
+  {
+    image: quizAiImage,
+    tecnologies: [TECHNOLOGIES.hono!],
+    title: 'Quiz AI',
+    description: 'API Quiz AI.',
+    repository: 'https://github.com/skuzow/quiz-ai',
+    website: 'https://quiz-ai.skuzow.net'
   },
   {
     image: disneylandResortImage,
