@@ -1,0 +1,35 @@
+---
+import Layout from '@/layouts/Layout.astro';
+
+import Section from '@/components/common/Section.astro';
+import Link from '@/components/common/Link.astro';
+import TriangleIcon from '@/components/icons/TriangleIcon.astro';
+import Project from '@/components/pages/index/Project.astro';
+
+import { PROJECTS, type Project as ProjectType } from '@/constants/projects';
+---
+
+<Layout title="Projects - skuzow.com" description="Alejandro Porras projects">
+  <Section id="info">
+    <h1 class="inline md:block">A collection of my personal projects.</h1>
+
+    <h2 class="inline md:block">Clean and functional web experiences.</h2>
+  </Section>
+
+  <Section id="projects" title="projects">
+    <Link
+      slot="title-button"
+      href="/"
+      title="Home"
+      newTab={false}
+      class="flex items-center gap-2 font-mono font-semibold"
+    >
+      back home
+      <TriangleIcon size={12} class="rotate-90" />
+    </Link>
+
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+      {PROJECTS.map((project: ProjectType) => <Project project={project} />)}
+    </div>
+  </Section>
+</Layout>
