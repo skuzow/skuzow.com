@@ -3,7 +3,7 @@ import NuxtIcon from '@/components/icons/technologies/NuxtIcon.astro';
 import VueIcon from '@/components/icons/technologies/VueIcon.astro';
 import AngularIcon from '@/components/icons/technologies/AngularIcon.astro';
 import HonoIcon from '@/components/icons/technologies/HonoIcon.astro';
-import NETCoreIcon from '@/components/icons/technologies/NETCoreIcon.astro';
+import NETIcon from '@/components/icons/technologies/NETIcon.astro';
 import SpringIcon from '@/components/icons/technologies/SpringIcon.astro';
 
 interface Technologies {
@@ -46,10 +46,10 @@ export const TECHNOLOGIES: Technologies = {
     title: 'Hono',
     website: 'https://hono.dev'
   },
-  netcore: {
-    icon: NETCoreIcon,
-    title: '.NETCore',
-    website: 'https://dotnet.microsoft.com/en-us/apps/aspnet'
+  net: {
+    icon: NETIcon,
+    title: '.NET',
+    website: 'https://dotnet.microsoft.com'
   },
   spring: {
     icon: SpringIcon,

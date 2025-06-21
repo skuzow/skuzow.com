@@ -27,7 +27,7 @@ export const EXPERIENCES: Experience[] = [
     type: JobType.INTERNSHIP,
     description:
       'Developer of a mobile app in a two devs team. I improved app accessibility with diverse modals, enhanced design for list management, profiles, and creations, upgraded search engines throughout the app, fixed multiple user experience bugs, and contributed to brand perfume recommender using AI.',
-    tecnologies: [TECHNOLOGIES.vue!, TECHNOLOGIES.netcore!]
+    tecnologies: [TECHNOLOGIES.vue!, TECHNOLOGIES.net!]
   },
   {
     startDate: new Date('2023-07'),
@@ -38,6 +38,6 @@ export const EXPERIENCES: Experience[] = [
     type: JobType.INTERNSHIP,
     description:
       'Full Stack Developer for Adeslas client. I maintained and resolved issues for Adeslas refund web app, modified central database parameters and exported information.',
-    tecnologies: [TECHNOLOGIES.angular!, TECHNOLOGIES.netcore!]
+    tecnologies: [TECHNOLOGIES.angular!, TECHNOLOGIES.net!]
   }
 ];
