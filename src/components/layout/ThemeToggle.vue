@@ -52,24 +52,15 @@ watch(theme, () => {
       </Button>
     </DropdownMenuTrigger>
     <DropdownMenuContent align="end" class="font-mono font-medium">
-      <DropdownMenuItem
-        @click="theme = Theme.LIGHT"
-        class="cursor-pointer gap-2"
-      >
+      <DropdownMenuItem @click="theme = Theme.LIGHT" class="gap-2">
         <SunIcon :size="16" />
         Light
       </DropdownMenuItem>
-      <DropdownMenuItem
-        @click="theme = Theme.DARK"
-        class="cursor-pointer gap-2"
-      >
+      <DropdownMenuItem @click="theme = Theme.DARK" class="gap-2">
         <MoonIcon :size="16" />
         Dark
       </DropdownMenuItem>
-      <DropdownMenuItem
-        @click="theme = Theme.SYSTEM"
-        class="cursor-pointer gap-2"
-      >
+      <DropdownMenuItem @click="theme = Theme.SYSTEM" class="gap-2">
         <LaptopMinimalIcon :size="16" />
         System
       </DropdownMenuItem>
