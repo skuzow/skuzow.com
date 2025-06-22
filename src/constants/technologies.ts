@@ -6,10 +6,6 @@ import HonoIcon from '@/components/icons/technologies/HonoIcon.astro';
 import NETIcon from '@/components/icons/technologies/NETIcon.astro';
 import SpringIcon from '@/components/icons/technologies/SpringIcon.astro';
 
-interface Technologies {
-  [key: string]: Technology;
-}
-
 export interface Technology {
   icon: (_props: TechnologyIconProps) => any;
   title: string;
@@ -20,7 +16,7 @@ export interface TechnologyIconProps {
   size?: number;
 }
 
-export const TECHNOLOGIES: Technologies = {
+export const TECHNOLOGIES = {
   astro: {
     icon: AstroIcon,
     title: 'Astro',
@@ -56,4 +52,4 @@ export const TECHNOLOGIES: Technologies = {
     title: 'Spring',
     website: 'https://spring.io'
   }
-};
+} satisfies Record<string, Technology>;

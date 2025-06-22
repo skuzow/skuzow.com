@@ -19,7 +19,7 @@ export interface Project {
 export const PROJECTS: Project[] = [
   {
     image: quizImage,
-    tecnologies: [TECHNOLOGIES.nuxt!, TECHNOLOGIES.vue!],
+    tecnologies: [TECHNOLOGIES.nuxt, TECHNOLOGIES.vue],
     title: 'Quiz',
     description: 'Test exams website with AI creation.',
     repository: 'https://github.com/skuzow/quiz',
@@ -27,14 +27,14 @@ export const PROJECTS: Project[] = [
   },
   {
     image: alistImage,
-    tecnologies: [TECHNOLOGIES.angular!, TECHNOLOGIES.spring!],
+    tecnologies: [TECHNOLOGIES.angular, TECHNOLOGIES.spring],
     title: 'Alist',
     description: 'Top based social network.',
     repository: 'https://github.com/CodeURJC-DAW-2022-23/webapp1'
   },
   {
     image: quizAiImage,
-    tecnologies: [TECHNOLOGIES.hono!],
+    tecnologies: [TECHNOLOGIES.hono],
     title: 'Quiz AI',
     description: 'API Quiz AI.',
     repository: 'https://github.com/skuzow/quiz-ai',
@@ -42,7 +42,7 @@ export const PROJECTS: Project[] = [
   },
   {
     image: disneylandResortImage,
-    tecnologies: [TECHNOLOGIES.astro!],
+    tecnologies: [TECHNOLOGIES.astro],
     title: 'DisneyLand Resort',
     description: 'Promotional website.',
     repository: 'https://github.com/skuzow/multimedia',
