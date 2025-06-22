@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted, watch } from 'vue';
-import { Sun, Moon, LaptopMinimal } from 'lucide-vue-next';
+import { SunIcon, MoonIcon, LaptopMinimalIcon } from 'lucide-vue-next';
 
 import {
   DropdownMenu,
@@ -46,8 +46,8 @@ watch(theme, () => {
         variant="ghost"
         size="icon"
       >
-        <Sun :size="18" class="scale-100 dark:scale-0" />
-        <Moon :size="18" class="absolute scale-0 dark:scale-100" />
+        <SunIcon :size="18" class="scale-100 dark:scale-0" />
+        <MoonIcon :size="18" class="absolute scale-0 dark:scale-100" />
         <span class="sr-only">Toggle theme</span>
       </Button>
     </DropdownMenuTrigger>
@@ -56,21 +56,21 @@ watch(theme, () => {
         @click="theme = Theme.LIGHT"
         class="cursor-pointer gap-2"
       >
-        <Sun :size="16" />
+        <SunIcon :size="16" />
         Light
       </DropdownMenuItem>
       <DropdownMenuItem
         @click="theme = Theme.DARK"
         class="cursor-pointer gap-2"
       >
-        <Moon :size="16" />
+        <MoonIcon :size="16" />
         Dark
       </DropdownMenuItem>
       <DropdownMenuItem
         @click="theme = Theme.SYSTEM"
         class="cursor-pointer gap-2"
       >
-        <LaptopMinimal :size="16" />
+        <LaptopMinimalIcon :size="16" />
         System
       </DropdownMenuItem>
     </DropdownMenuContent>

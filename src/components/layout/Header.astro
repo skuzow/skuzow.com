@@ -1,5 +1,5 @@
 ---
-import { Linkedin, Github } from 'lucide-vue-next';
+import { LinkedinIcon, GithubIcon } from 'lucide-vue-next';
 
 import Link from '@/components/common/Link.astro';
 import LogoIcon from '@/components/icons/LogoIcon.astro';
@@ -27,14 +27,14 @@ import ThemeToggle from '@/components/layout/ThemeToggle.vue';
         underline={false}
       >
         <Button variant="ghost" size="icon">
-          <Linkedin size={18} />
+          <LinkedinIcon size={18} />
           <span class="sr-only">Linkedin</span>
         </Button>
       </Link>
 
       <Link href="https://github.com/skuzow" title="Github" underline={false}>
         <Button variant="ghost" size="icon">
-          <Github size={18} />
+          <GithubIcon size={18} />
           <span class="sr-only">Github</span>
         </Button>
       </Link>

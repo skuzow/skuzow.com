@@ -1,5 +1,5 @@
 ---
-import { Code, Link as LinkIcon } from 'lucide-vue-next';
+import { CodeIcon, LinkIcon } from 'lucide-vue-next';
 
 import Picture from '@/components/common/Picture.astro';
 import Technology from '@/components/pages/index/Technology.astro';
@@ -51,7 +51,7 @@ const { project } = Astro.props;
             underline={false}
           >
             <Button variant="ghost" size="icon">
-              <Code size={18} />
+              <CodeIcon size={18} />
               <span class="sr-only">{project.title} repository</span>
             </Button>
           </Link>

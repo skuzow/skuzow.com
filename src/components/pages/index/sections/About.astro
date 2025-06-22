@@ -1,5 +1,5 @@
 ---
-import { Mail, MailOpen } from 'lucide-vue-next';
+import { MailIcon, MailOpenIcon } from 'lucide-vue-next';
 
 import Section from '@/components/common/Section.astro';
 import Link from '@/components/common/Link.astro';
@@ -30,8 +30,8 @@ const { section } = Astro.props;
     underline={false}
   >
     <Button class="gap-2 font-mono">
-      <Mail id="mail-icon" size={16} />
-      <MailOpen id="mail-open-icon" size={16} class="hidden" />
+      <MailIcon id="mail-icon" size={16} />
+      <MailOpenIcon id="mail-open-icon" size={16} class="hidden" />
       Contact
     </Button>
   </Link>
