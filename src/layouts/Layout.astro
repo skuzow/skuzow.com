@@ -1,6 +1,6 @@
 ---
 import '@/styles/globals.css';
-import { ViewTransitions } from 'astro:transitions';
+import { ClientRouter } from 'astro:transitions';
 
 import ThemeHandler from '@/components/nav/ThemeHandler.astro';
 import Header from '@/components/nav/Header.astro';
@@ -80,7 +80,7 @@ const imageURL: URL = new URL(image, Astro.url);
     <meta name="robots" content="index, follow" />
     <meta name="googlebot" content="index, follow" />
 
-    <ViewTransitions />
+    <ClientRouter />
     <ThemeHandler />
   </head>
   <body class="relative flex min-h-screen flex-col gap-2 py-4 md:py-6">
