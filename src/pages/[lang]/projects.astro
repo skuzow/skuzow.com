@@ -1,4 +1,6 @@
 ---
+import { staticPaths } from '@/i18n/ui';
+import { useTranslations } from '@/i18n/utils';
 import Layout from '@/layouts/Layout.astro';
 
 import Section from '@/components/common/Section.astro';
@@ -7,9 +9,17 @@ import TriangleIcon from '@/components/icons/TriangleIcon.astro';
 import Project from '@/components/home/Project.astro';
 
 import { PROJECTS, type Project as ProjectType } from '@/constants/projects';
+
+export function getStaticPaths() {
+  return staticPaths;
+}
+
+const t = useTranslations(Astro.currentLocale);
 ---
 
 <Layout title="Projects" description="Alejandro Porras projects">
+  {t.title}
+
   <Section id="info">
     <h1 class="inline md:block">A collection of my personal projects.</h1>
 

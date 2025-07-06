@@ -1,7 +1,6 @@
 import { defineConfig } from 'astro/config';
 
 import tailwindcss from '@tailwindcss/vite';
-
 import vue from '@astrojs/vue';
 import sitemap from '@astrojs/sitemap';
 
@@ -15,5 +14,12 @@ export default defineConfig({
       })
     ]
   },
-  integrations: [vue(), sitemap()]
+  integrations: [vue(), sitemap()],
+  i18n: {
+    locales: ['en', 'es'],
+    defaultLocale: 'en',
+    routing: {
+      prefixDefaultLocale: true
+    }
+  }
 });
