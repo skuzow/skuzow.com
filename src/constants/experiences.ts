@@ -19,6 +19,15 @@ enum JobType {
 
 export const EXPERIENCES: Experience[] = [
   {
+    startDate: new Date('2025-06'),
+    title: 'Software Engineer',
+    company: 'Plexus Tech',
+    website: 'https://www.plexus.es',
+    type: JobType.FULL_TIME,
+    description: 'Working for Santander bank.',
+    technologies: [TECHNOLOGIES.angular, TECHNOLOGIES.spring]
+  },
+  {
     startDate: new Date('2023-10'),
     endDate: new Date('2024-01'),
     title: 'Full Stack Developer',
