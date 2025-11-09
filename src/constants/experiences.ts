@@ -24,7 +24,7 @@ export const EXPERIENCES: Experience[] = [
     company: 'Plexus Tech',
     website: 'https://www.plexus.es',
     type: JobType.FULL_TIME,
-    description: 'Working for Santander bank.',
+    description: 'Working for Santander bank in the insurance department.',
     technologies: [TECHNOLOGIES.angular, TECHNOLOGIES.spring]
   },
   {
