@@ -19,12 +19,29 @@ enum JobType {
 
 export const EXPERIENCES: Experience[] = [
   {
-    startDate: new Date('2025-06'),
+    startDate: new Date('2026-02'),
     title: 'Software Engineer',
+    company: 'Ever Health',
+    website: 'https://www.everhealth.es',
+    type: JobType.FULL_TIME,
+    description:
+      'Developing solutions that improve the way people take care of their health.',
+    technologies: [
+      TECHNOLOGIES.angular,
+      TECHNOLOGIES.nest,
+      TECHNOLOGIES.php,
+      TECHNOLOGIES.loopback
+    ]
+  },
+  {
+    startDate: new Date('2025-06'),
+    endDate: new Date('2026-02'),
+    title: 'Junior Software Engineer',
     company: 'Plexus Tech',
     website: 'https://www.plexus.es',
     type: JobType.FULL_TIME,
-    description: 'Working for Santander bank in the insurance department.',
+    description:
+      'Worked for Santander Bank in the insurance department as part of the transformation area, where I contributed to the end-to-end development of an insurance product from inception and developed features to improve the user experience.',
     technologies: [TECHNOLOGIES.angular, TECHNOLOGIES.spring]
   },
   {

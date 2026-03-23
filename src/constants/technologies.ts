@@ -2,7 +2,10 @@ import AstroIcon from '@/components/icons/technologies/AstroIcon.astro';
 import NuxtIcon from '@/components/icons/technologies/NuxtIcon.astro';
 import VueIcon from '@/components/icons/technologies/VueIcon.astro';
 import AngularIcon from '@/components/icons/technologies/AngularIcon.astro';
+import PhpIcon from '@/components/icons/technologies/PhpIcon.astro';
 import HonoIcon from '@/components/icons/technologies/HonoIcon.astro';
+import NestIcon from '@/components/icons/technologies/NestIcon.astro';
+import LoopbackIcon from '@/components/icons/technologies/LoopbackIcon.astro';
 import NETIcon from '@/components/icons/technologies/NETIcon.astro';
 import SpringIcon from '@/components/icons/technologies/SpringIcon.astro';
 
@@ -37,10 +40,25 @@ export const TECHNOLOGIES = {
     title: 'Angular',
     website: 'https://angular.dev'
   },
+  php: {
+    icon: PhpIcon,
+    title: 'PHP',
+    website: 'https://php.net'
+  },
   hono: {
     icon: HonoIcon,
     title: 'Hono',
     website: 'https://hono.dev'
+  },
+  nest: {
+    icon: NestIcon,
+    title: 'Nest',
+    website: 'https://nestjs.com'
+  },
+  loopback: {
+    icon: LoopbackIcon,
+    title: 'LoopBack',
+    website: 'https://loopback.io'
   },
   net: {
     icon: NETIcon,
