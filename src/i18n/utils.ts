@@ -2,8 +2,9 @@ import { getRelativeLocaleUrl } from 'astro:i18n';
 
 import { ui, defaultLang } from './ui';
 
-export function getUrl(lang: string | undefined, path: string) {
-  return getRelativeLocaleUrl(getSelectedLang(lang), path);
+export function useLocaleUrl(locale: string | undefined) {
+  const lang = getSelectedLang(locale);
+  return (path: string) => getRelativeLocaleUrl(lang, path);
 }
 
 export function useTranslations(lang: string | undefined) {
