@@ -1,28 +1,11 @@
 ---
 import { getI18nStaticPaths } from '@/i18n/ui';
-import Layout from '@/layouts/Layout.astro';
 
-import About from '@/components/home/sections/About.astro';
-import Projects from '@/components/home/sections/Projects.astro';
-import Experiences from '@/components/home/sections/Experiences.astro';
-// import Posts from '@/components/home/sections/Posts.astro';
-
-import { SECTIONS } from '@/constants/sections';
+import Home from '@/components/home/index.astro';
 
 export function getStaticPaths() {
   return getI18nStaticPaths();
 }
 ---
 
-<Layout
-  title="Alejandro Porras"
-  description="Alejandro Porras Personal Website. Software Engineering Student."
->
-  <About section={SECTIONS.about} />
-
-  <Projects section={SECTIONS.projects} />
-
-  <Experiences section={SECTIONS.experiences} />
-
-  <!-- <Posts section={SECTIONS.posts} /> -->
-</Layout>
+<Home />
