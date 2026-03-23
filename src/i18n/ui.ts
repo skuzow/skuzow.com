@@ -8,10 +8,9 @@ export const languages = {
 
 export const defaultLang = 'en';
 
-export const staticPaths = [
-  { params: { lang: 'en' } },
-  { params: { lang: 'es' } }
-];
+export function getI18nStaticPaths() {
+  return Object.keys(languages).map((lang) => ({ params: { lang } }));
+}
 
 export const ui = {
   en,

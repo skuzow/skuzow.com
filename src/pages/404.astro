@@ -1,6 +1,7 @@
 ---
 import { HomeIcon } from 'lucide-vue-next';
 
+import { getUrl } from '@/i18n/utils';
 import Layout from '@/layouts/Layout.astro';
 
 import Section from '@/components/common/Section.astro';
@@ -26,7 +27,12 @@ import { Button } from '@/components/ui/button';
       <div>
         <h2 class="mb-3.5 text-xl font-semibold">PAGE NOT FOUND</h2>
 
-        <Link href="/" title="Home" newTab={false} underline={false}>
+        <Link
+          href={getUrl(Astro.currentLocale, '/')}
+          title="Home"
+          newTab={false}
+          underline={false}
+        >
           <Button class="gap-2">
             <HomeIcon size={16} />
             Back Home

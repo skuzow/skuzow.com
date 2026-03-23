@@ -1,5 +1,5 @@
 ---
-import { staticPaths } from '@/i18n/ui';
+import { getI18nStaticPaths } from '@/i18n/ui';
 import Layout from '@/layouts/Layout.astro';
 
 import About from '@/components/home/sections/About.astro';
@@ -10,7 +10,7 @@ import Experiences from '@/components/home/sections/Experiences.astro';
 import { SECTIONS } from '@/constants/sections';
 
 export function getStaticPaths() {
-  return staticPaths;
+  return getI18nStaticPaths();
 }
 ---
 

@@ -1,6 +1,6 @@
 ---
-import { staticPaths } from '@/i18n/ui';
-import { useTranslations } from '@/i18n/utils';
+import { getI18nStaticPaths } from '@/i18n/ui';
+import { getUrl, useTranslations } from '@/i18n/utils';
 import Layout from '@/layouts/Layout.astro';
 
 import Section from '@/components/common/Section.astro';
@@ -11,7 +11,7 @@ import Project from '@/components/home/Project.astro';
 import { PROJECTS, type Project as ProjectType } from '@/constants/projects';
 
 export function getStaticPaths() {
-  return staticPaths;
+  return getI18nStaticPaths();
 }
 
 const t = useTranslations(Astro.currentLocale);
@@ -29,7 +29,7 @@ const t = useTranslations(Astro.currentLocale);
   <Section id="projects" title="projects">
     <Link
       slot="title-button"
-      href="/"
+      href={getUrl(Astro.currentLocale, '/')}
       title="Home"
       newTab={false}
       class="flex items-center gap-2 font-mono font-semibold"
