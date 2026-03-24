@@ -1,16 +1,20 @@
 import en from './locales/en';
 import es from './locales/es';
 
+export const defaultLang = 'en';
+
 export const languages = {
   en: 'English',
   es: 'Español'
 };
 
-export const defaultLang = 'en';
+export const localeCodes = Object.keys(languages);
 
-export function getI18nStaticPaths() {
-  return Object.keys(languages).map((lang) => ({ params: { lang } }));
-}
+export const i18nStaticPaths = () => {
+  return localeCodes
+    .filter((lang) => lang !== defaultLang)
+    .map((lang) => ({ params: { lang } }));
+};
 
 export const ui = {
   en,

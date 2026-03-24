@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { languages } from '@/i18n/ui';
+import { defaultLang, languages } from '@/i18n/ui';
 
 import {
   DropdownMenu,
@@ -17,10 +17,15 @@ interface Props {
 const { currentLang, currentPath } = defineProps<Props>();
 
 function buildLangPath(targetLang: string) {
-  const [, ...rest] = currentPath.split('/').filter(Boolean);
-  const restPath = rest.join('/');
+  const segments = currentPath.split('/').filter(Boolean);
+  const path = (
+    segments[0] && segments[0] in languages ? segments.slice(1) : segments
+  ).join('/');
 
-  return restPath ? `/${targetLang}/${restPath}` : `/${targetLang}`;
+  const urlPath = path ? `/${path}` : '';
+
+  if (targetLang === defaultLang) return urlPath || '/';
+  return `/${targetLang}${urlPath}`;
 }
 
 const langPaths = Object.fromEntries(

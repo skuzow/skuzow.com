@@ -1,46 +1,9 @@
 ---
-import { getI18nStaticPaths } from '@/i18n/ui';
-import { useTranslations, useLocaleUrl } from '@/i18n/utils';
-import Layout from '@/layouts/Layout.astro';
+import { i18nStaticPaths } from '@/i18n/ui';
 
-import Section from '@/components/common/Section.astro';
-import Link from '@/components/common/Link.astro';
-import TriangleIcon from '@/components/icons/TriangleIcon.astro';
-import Project from '@/components/home/Project.astro';
+import ProjectsPage from '@/components/projects/index.astro';
 
-import { PROJECTS, type Project as ProjectType } from '@/constants/projects';
-
-export function getStaticPaths() {
-  return getI18nStaticPaths();
-}
-
-const t = useTranslations(Astro.currentLocale);
-const url = useLocaleUrl(Astro.currentLocale);
+export const getStaticPaths = () => i18nStaticPaths();
 ---
 
-<Layout title="Projects" description="Alejandro Porras projects">
-  {t.title}
-
-  <Section id="info">
-    <h1 class="inline md:block">A collection of my personal projects.</h1>
-
-    <h2 class="inline md:block">Clean and functional web experiences.</h2>
-  </Section>
-
-  <Section id="projects" title="projects">
-    <Link
-      slot="title-button"
-      href={url('/')}
-      title="Home"
-      newTab={false}
-      class="flex items-center gap-2 font-mono font-semibold"
-    >
-      back home
-      <TriangleIcon size={12} class="rotate-90" />
-    </Link>
-
-    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-      {PROJECTS.map((project: ProjectType) => <Project project={project} />)}
-    </div>
-  </Section>
-</Layout>
+<ProjectsPage />

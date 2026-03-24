@@ -2,7 +2,7 @@
 import { LinkedinIcon, GithubIcon } from 'lucide-vue-next';
 
 import { useLocaleUrl } from '@/i18n/utils';
-import { defaultLang } from '@/i18n/ui';
+import { defaultLang, languages } from '@/i18n/ui';
 
 import Link from '@/components/common/Link.astro';
 import LogoIcon from '@/components/icons/LogoIcon.astro';
@@ -58,12 +58,18 @@ const url = useLocaleUrl(Astro.currentLocale);
   </nav>
 </header>
 
-<script>
+<script is:inline define:vars={{ languages }}>
   document.addEventListener('astro:page-load', () => {
     const homeLink = document.getElementById('home-link');
 
     homeLink?.addEventListener('click', (event) => {
-      const isHomePage: boolean = window.location.pathname === '/';
+      const path = window.location.pathname.replace(/\/$/, '') || '/';
+      const segments = path.split('/').filter(Boolean);
+
+      const isHomePage =
+        segments.length === 0 ||
+        (segments.length === 1 && segments[0] in languages);
+
       if (!isHomePage) return;
 
       event.preventDefault();

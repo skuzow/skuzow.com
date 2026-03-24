@@ -1,11 +1,9 @@
 ---
-import { getI18nStaticPaths } from '@/i18n/ui';
+import { i18nStaticPaths } from '@/i18n/ui';
 
-import Home from '@/components/home/index.astro';
+import HomePage from '@/components/home/index.astro';
 
-export function getStaticPaths() {
-  return getI18nStaticPaths();
-}
+export const getStaticPaths = () => i18nStaticPaths();
 ---
 
-<Home />
+<HomePage />
