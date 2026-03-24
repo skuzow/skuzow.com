@@ -7,6 +7,7 @@ import sitemap from '@astrojs/sitemap';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://skuzow.com',
+  trailingSlash: 'never',
   vite: {
     plugins: [
       tailwindcss({
