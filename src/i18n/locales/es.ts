@@ -40,8 +40,7 @@ export default {
     items: {
       quiz: {
         title: 'Quiz',
-        description:
-          'Aplicación web de exámenes tipo test con creación asistida por IA.'
+        description: 'Web de exámenes tipo test con creación por IA.'
       },
       alist: {
         title: 'Alist',
