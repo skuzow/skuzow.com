@@ -23,7 +23,10 @@ const t = useTranslations(Astro.currentLocale).projects;
 const tProject = t.items[project.id];
 ---
 
-<div class="flex flex-col gap-2" transition:persist={`${lang}-${project.id}`}>
+<article
+  class="flex flex-col gap-2"
+  transition:persist={`${lang}-${project.id}`}
+>
   <div class="relative">
     <Picture
       src={project.image}
@@ -34,13 +37,15 @@ const tProject = t.items[project.id];
       class="w-full rounded-md"
     />
 
-    <div class="absolute right-2 bottom-2 flex gap-2">
+    <ul class="absolute right-2 bottom-2 flex gap-2">
       {
         project.technologies.map((technology: TechnologyType) => (
-          <Technology technology={technology} />
+          <li>
+            <Technology technology={technology} />
+          </li>
         ))
       }
-    </div>
+    </ul>
   </div>
 
   <div class="flex justify-between">
@@ -80,4 +85,4 @@ const tProject = t.items[project.id];
       }
     </div>
   </div>
-</div>
+</article>

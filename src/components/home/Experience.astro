@@ -19,7 +19,7 @@ const t = useTranslations(Astro.currentLocale).experience;
 const tExperience = t.items[experience.id];
 ---
 
-<div class="grid grid-cols-[auto_1fr] gap-7">
+<article class="grid grid-cols-[auto_1fr] gap-7">
   <div class="bg-foreground w-0.5">
     <TriangleIcon size={14} class="mt-[0.31rem] rotate-90" />
   </div>
@@ -44,12 +44,14 @@ const tExperience = t.items[experience.id];
 
     <p class="mb-3 text-sm">{tExperience.description}</p>
 
-    <div class="mb-6 flex flex-wrap gap-2">
+    <ul class="mb-6 flex flex-wrap gap-2">
       {
         experience.technologies.map((technology: TechnologyType) => (
-          <Technology technology={technology} />
+          <li>
+            <Technology technology={technology} />
+          </li>
         ))
       }
-    </div>
+    </ul>
   </div>
-</div>
+</article>
