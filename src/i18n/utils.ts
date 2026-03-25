@@ -2,6 +2,10 @@ import { getRelativeLocaleUrl } from 'astro:i18n';
 
 import { ui, defaultLang } from './ui';
 
+export function useLang(lang: string | undefined) {
+  return lang || defaultLang;
+}
+
 export function useTranslations(lang: string | undefined) {
   return ui[getSelectedLang(lang)];
 }

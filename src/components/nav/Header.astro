@@ -1,8 +1,8 @@
 ---
 import { LinkedinIcon, GithubIcon } from 'lucide-vue-next';
 
-import { defaultLang, languages } from '@/i18n/ui';
-import { useTranslations, useLocaleUrl } from '@/i18n/utils';
+import { languages } from '@/i18n/ui';
+import { useLang, useTranslations, useLocaleUrl } from '@/i18n/utils';
 
 import Link from '@/components/common/Link.astro';
 import LogoIcon from '@/components/icons/LogoIcon.astro';
@@ -10,7 +10,7 @@ import { Button } from '@/components/ui/button';
 import LangToggle from '@/components/nav/LangToggle.vue';
 import ThemeToggle from '@/components/nav/ThemeToggle.vue';
 
-const lang: string = Astro.currentLocale || defaultLang;
+const lang = useLang(Astro.currentLocale);
 
 const t = useTranslations(Astro.currentLocale);
 const url = useLocaleUrl(Astro.currentLocale);

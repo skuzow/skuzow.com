@@ -1,8 +1,7 @@
 ---
 import { CodeIcon, LinkIcon } from 'lucide-vue-next';
 
-import { defaultLang } from '@/i18n/ui';
-import { useTranslations } from '@/i18n/utils';
+import { useLang, useTranslations } from '@/i18n/utils';
 
 import Picture from '@/components/common/Picture.astro';
 import Technology from '@/components/home/Technology.astro';
@@ -18,7 +17,7 @@ interface Props {
 
 const { project } = Astro.props;
 
-const lang: string = Astro.currentLocale || defaultLang;
+const lang = useLang(Astro.currentLocale);
 
 const t = useTranslations(Astro.currentLocale).projects;
 const tProject = t.items[project.id];

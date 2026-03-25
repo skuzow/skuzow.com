@@ -2,7 +2,7 @@
 import '@/styles/globals.css';
 import { ClientRouter } from 'astro:transitions';
 
-import { defaultLang } from '@/i18n/ui';
+import { useLang } from '@/i18n/utils';
 
 import ThemeHandler from '@/components/nav/ThemeHandler.astro';
 import Header from '@/components/nav/Header.astro';
@@ -17,7 +17,7 @@ interface Props {
 
 const { title, description, image = '/images/website.png' } = Astro.props;
 
-const lang: string = Astro.currentLocale || defaultLang;
+const lang = useLang(Astro.currentLocale);
 
 const fullTitle: string = `${title} - skuzow.com`;
 
