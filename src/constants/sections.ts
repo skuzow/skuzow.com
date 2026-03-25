@@ -3,10 +3,6 @@ export interface Section {
   label: string;
 }
 
-export interface SectionProps {
-  section: Section;
-}
-
 export const SECTIONS = {
   about: {
     url: '/#about',
@@ -23,5 +19,9 @@ export const SECTIONS = {
   posts: {
     url: '/#posts',
     label: 'posts'
+  },
+  info: {
+    url: '/#info',
+    label: 'info'
   }
 } satisfies Record<string, Section>;

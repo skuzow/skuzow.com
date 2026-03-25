@@ -1,38 +1,41 @@
 ---
 import { MailIcon, MailOpenIcon } from 'lucide-vue-next';
 
+import { useTranslations } from '@/i18n/utils';
+
 import Section from '@/components/common/Section.astro';
 import Link from '@/components/common/Link.astro';
 import { Button } from '@/components/ui/button';
 
-import { type SectionProps as Props } from '@/constants/sections';
+import { SECTIONS } from '@/constants/sections';
 
-const { section } = Astro.props;
+const t = useTranslations(Astro.currentLocale);
 ---
 
-<Section id={section.label}>
+<Section id={SECTIONS.about.label}>
   <div class="mb-3">
     <h1 class="inline md:block">
-      Hi, I'm Alex. <span class="font-semibold">Software Engineer</span> from Madrid,
-      Spain.
+      {t.about.info.title.introduction}
+      <span class="font-semibold">{t.about.info.title.profession}</span>
+      {t.about.info.title.location}
     </h1>
 
     <h2 class="inline md:block">
-      Focused on full stack development, minimal design lover.
+      {t.about.info.subtitle}
     </h2>
   </div>
 
   <Link
     id="contact-button"
     href="mailto:hello@skuzow.com"
-    title="Contact Email"
+    title={t.about.buttons.contact.description}
     newTab={false}
     underline={false}
   >
     <Button class="gap-2 font-mono">
       <MailIcon id="mail-icon" size={16} />
       <MailOpenIcon id="mail-open-icon" size={16} class="hidden" />
-      Contact
+      {t.about.buttons.contact.title}
     </Button>
   </Link>
 </Section>

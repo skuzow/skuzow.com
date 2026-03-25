@@ -1,4 +1,6 @@
 ---
+import { useTranslations } from '@/i18n/utils';
+
 import TriangleIcon from '@/components/icons/TriangleIcon.astro';
 import MonthDate from '@/components/common/MonthDate.astro';
 import Link from '@/components/common/Link.astro';
@@ -12,6 +14,9 @@ interface Props {
 }
 
 const { experience } = Astro.props;
+
+const t = useTranslations(Astro.currentLocale).experience;
+const tExperience = t.items[experience.id];
 ---
 
 <div class="grid grid-cols-[auto_1fr] gap-7">
@@ -23,19 +28,21 @@ const { experience } = Astro.props;
     <p class="mb-3 font-mono">
       <MonthDate date={experience.startDate} />
       -
-      {experience.endDate ? <MonthDate date={experience.endDate} /> : 'Present'}
+      {experience.endDate ? <MonthDate date={experience.endDate} /> : t.present}
     </p>
 
-    <h3 class="font-mono font-semibold">{experience.title}</h3>
+    <h3 class="font-mono font-semibold">
+      {tExperience.title}
+    </h3>
     <p class="mb-2 text-sm font-medium">
       <Link href={experience.website} title={experience.company}>
         {experience.company}
       </Link>
       -
-      {experience.type}
+      {t.types[experience.type]}
     </p>
 
-    <p class="mb-3 text-sm">{experience.description}</p>
+    <p class="mb-3 text-sm">{tExperience.description}</p>
 
     <div class="mb-6 flex flex-wrap gap-2">
       {

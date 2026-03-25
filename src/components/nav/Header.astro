@@ -1,8 +1,8 @@
 ---
 import { LinkedinIcon, GithubIcon } from 'lucide-vue-next';
 
-import { useLocaleUrl } from '@/i18n/utils';
 import { defaultLang, languages } from '@/i18n/ui';
+import { useTranslations, useLocaleUrl } from '@/i18n/utils';
 
 import Link from '@/components/common/Link.astro';
 import LogoIcon from '@/components/icons/LogoIcon.astro';
@@ -12,6 +12,7 @@ import ThemeToggle from '@/components/nav/ThemeToggle.vue';
 
 const lang: string = Astro.currentLocale || defaultLang;
 
+const t = useTranslations(Astro.currentLocale);
 const url = useLocaleUrl(Astro.currentLocale);
 ---
 
@@ -20,12 +21,12 @@ const url = useLocaleUrl(Astro.currentLocale);
     <Link
       id="home-link"
       href={url('/')}
-      title="Home"
+      title={t.home.title}
       newTab={false}
       class="flex items-center gap-2.5"
     >
       <LogoIcon size={30} />
-      <span class="font-mono font-medium">skuzow.com</span>
+      <span class="font-mono font-medium">skuzow</span>
     </Link>
 
     <div class="flex items-center gap-1">

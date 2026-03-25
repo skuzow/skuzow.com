@@ -1,6 +1,8 @@
 ---
 import { CodeIcon, LinkIcon } from 'lucide-vue-next';
 
+import { useTranslations } from '@/i18n/utils';
+
 import Picture from '@/components/common/Picture.astro';
 import Technology from '@/components/home/Technology.astro';
 import Link from '@/components/common/Link.astro';
@@ -14,13 +16,16 @@ interface Props {
 }
 
 const { project } = Astro.props;
+
+const t = useTranslations(Astro.currentLocale).projects;
+const tProject = t.items[project.id];
 ---
 
-<div class="flex flex-col gap-2" transition:persist={project.title}>
+<div class="flex flex-col gap-2" transition:persist={project.id}>
   <div class="relative">
     <Picture
       src={project.image}
-      alt={project.title}
+      alt={tProject.title}
       width={405}
       height={324}
       loading="eager"
@@ -38,8 +43,8 @@ const { project } = Astro.props;
 
   <div class="flex justify-between">
     <div>
-      <h3 class="font-mono font-semibold">{project.title}</h3>
-      <p class="text-sm">{project.description}</p>
+      <h3 class="font-mono font-semibold">{tProject.title}</h3>
+      <p class="text-sm">{tProject.description}</p>
     </div>
 
     <div class="flex items-start gap-1">
@@ -47,12 +52,12 @@ const { project } = Astro.props;
         project.repository && (
           <Link
             href={project.repository}
-            title={project.title + ' Repository'}
+            title={tProject.title + ' Repository'}
             underline={false}
           >
             <Button variant="ghost" size="icon">
               <CodeIcon size={18} />
-              <span class="sr-only">{project.title} repository</span>
+              <span class="sr-only">{tProject.title} repository</span>
             </Button>
           </Link>
         )
@@ -61,12 +66,12 @@ const { project } = Astro.props;
         project.website && (
           <Link
             href={project.website}
-            title={project.title + ' Website'}
+            title={tProject.title + ' Website'}
             underline={false}
           >
             <Button variant="ghost" size="icon">
               <LinkIcon size={18} />
-              <span class="sr-only">{project.title} website</span>
+              <span class="sr-only">{tProject.title} website</span>
             </Button>
           </Link>
         )

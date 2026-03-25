@@ -1,30 +1,21 @@
 ---
 import Layout from '@/layouts/Layout.astro';
+import { useTranslations } from '@/i18n/utils';
 
 import About from '@/components/home/sections/About.astro';
 import Projects from '@/components/home/sections/Projects.astro';
 import Experiences from '@/components/home/sections/Experiences.astro';
 // import Posts from '@/components/home/sections/Posts.astro';
 
-import { SECTIONS } from '@/constants/sections';
-
-interface Props {
-  title?: string;
-  description?: string;
-}
-
-const {
-  title = 'Alejandro Porras',
-  description = 'Alejandro Porras Personal Website. Software Engineer from Madrid, Spain.'
-} = Astro.props;
+const t = useTranslations(Astro.currentLocale);
 ---
 
-<Layout title={title} description={description}>
-  <About section={SECTIONS.about} />
+<Layout title={t.title} description={t.description}>
+  <About />
 
-  <Projects section={SECTIONS.projects} />
+  <Projects />
 
-  <Experiences section={SECTIONS.experiences} />
+  <Experiences />
 
-  <!-- <Posts section={SECTIONS.posts} /> -->
+  <!-- <Posts /> -->
 </Layout>

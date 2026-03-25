@@ -1,36 +1,35 @@
 ---
-import { useTranslations, useLocaleUrl } from '@/i18n/utils';
 import Layout from '@/layouts/Layout.astro';
+import { useTranslations, useLocaleUrl } from '@/i18n/utils';
 
 import Section from '@/components/common/Section.astro';
 import Link from '@/components/common/Link.astro';
 import TriangleIcon from '@/components/icons/TriangleIcon.astro';
 import Project from '@/components/home/Project.astro';
 
+import { SECTIONS } from '@/constants/sections';
 import { PROJECTS, type Project as ProjectType } from '@/constants/projects';
 
 const t = useTranslations(Astro.currentLocale);
 const url = useLocaleUrl(Astro.currentLocale);
 ---
 
-<Layout title="Projects" description="Alejandro Porras projects">
-  {t.title}
+<Layout title={t.projects.title} description={t.projects.description}>
+  <Section id={SECTIONS.info.label}>
+    <h1 class="inline md:block">{t.projects.info.title}</h1>
 
-  <Section id="info">
-    <h1 class="inline md:block">A collection of my personal projects.</h1>
-
-    <h2 class="inline md:block">Clean and functional web experiences.</h2>
+    <h2 class="inline md:block">{t.projects.info.subtitle}</h2>
   </Section>
 
-  <Section id="projects" title="projects">
+  <Section id={SECTIONS.projects.label} title={t.projects.title}>
     <Link
       slot="title-button"
       href={url('/')}
-      title="Home"
+      title={t.home.title}
       newTab={false}
       class="flex items-center gap-2 font-mono font-semibold"
     >
-      back home
+      {t.projects.buttons.backHome}
       <TriangleIcon size={12} class="rotate-90" />
     </Link>
 

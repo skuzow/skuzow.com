@@ -1,18 +1,19 @@
 ---
+import { useTranslations } from '@/i18n/utils';
+
 import Section from '@/components/common/Section.astro';
 import Experience from '@/components/home/Experience.astro';
 
+import { SECTIONS } from '@/constants/sections';
 import {
   EXPERIENCES,
   type Experience as ExperienceType
 } from '@/constants/experiences';
 
-import { type SectionProps as Props } from '@/constants/sections';
-
-const { section } = Astro.props;
+const t = useTranslations(Astro.currentLocale);
 ---
 
-<Section id={section.label} title="experience">
+<Section id={SECTIONS.experiences.label} title={t.experience.title}>
   {
     EXPERIENCES.map((experience: ExperienceType) => (
       <Experience experience={experience} />
