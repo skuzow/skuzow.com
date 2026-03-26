@@ -88,5 +88,11 @@ export default {
   },
   posts: {
     title: 'Posts'
+  },
+  notFound: {
+    title: 'PAGE NOT FOUND',
+    buttons: {
+      backHome: 'Back Home'
+    }
   }
 };

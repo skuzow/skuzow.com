@@ -89,5 +89,11 @@ export default {
   },
   posts: {
     title: 'Publicaciones'
+  },
+  notFound: {
+    title: 'PÁGINA NO ENCONTRADA',
+    buttons: {
+      backHome: 'Volver Inicio'
+    }
   }
 };
