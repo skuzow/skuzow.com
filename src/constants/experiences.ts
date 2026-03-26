@@ -1,31 +1,34 @@
 import { TECHNOLOGIES, type Technology } from '@/constants/technologies';
 
+export type ExperienceId =
+  | 'everHealth'
+  | 'plexusTech'
+  | 'purposeFragrance'
+  | 'ayesa';
+
 export interface Experience {
+  id: ExperienceId;
   startDate: Date;
   endDate?: Date;
-  title: string;
   company: string;
   website: string;
   type: JobType;
-  description: string;
   technologies: Technology[];
 }
 
 enum JobType {
-  FULL_TIME = 'Full-time',
-  PART_TIME = 'Part-time',
-  INTERNSHIP = 'Internship'
+  FULL_TIME = 'fullTime',
+  PART_TIME = 'partTime',
+  INTERNSHIP = 'internship'
 }
 
 export const EXPERIENCES: Experience[] = [
   {
+    id: 'everHealth',
     startDate: new Date('2026-02'),
-    title: 'Software Engineer',
     company: 'Ever Health',
     website: 'https://www.everhealth.es',
     type: JobType.FULL_TIME,
-    description:
-      'Developing solutions that improve the way people take care of their health.',
     technologies: [
       TECHNOLOGIES.angular,
       TECHNOLOGIES.nest,
@@ -34,36 +37,30 @@ export const EXPERIENCES: Experience[] = [
     ]
   },
   {
+    id: 'plexusTech',
     startDate: new Date('2025-06'),
     endDate: new Date('2026-02'),
-    title: 'Junior Software Engineer',
     company: 'Plexus Tech',
     website: 'https://www.plexus.es',
     type: JobType.FULL_TIME,
-    description:
-      'Worked for Santander Bank in the insurance department as part of the transformation area, where I contributed to the end-to-end development of an insurance product from inception and developed features to improve the user experience.',
     technologies: [TECHNOLOGIES.angular, TECHNOLOGIES.spring]
   },
   {
+    id: 'purposeFragrance',
     startDate: new Date('2023-10'),
     endDate: new Date('2024-01'),
-    title: 'Full Stack Developer',
     company: 'PURPOSE FRAGRANCE',
     website: 'https://purposefragranceclub.com',
     type: JobType.INTERNSHIP,
-    description:
-      'Developer of a mobile app in a two devs team. I improved app accessibility with diverse modals, enhanced design for list management, profiles, and creations, upgraded search engines throughout the app, fixed multiple user experience bugs, and contributed to brand perfume recommender using AI.',
     technologies: [TECHNOLOGIES.vue, TECHNOLOGIES.net]
   },
   {
+    id: 'ayesa',
     startDate: new Date('2023-07'),
     endDate: new Date('2023-10'),
-    title: 'Software Consultant',
     company: 'Ayesa',
     website: 'https://www.ayesa.com',
     type: JobType.INTERNSHIP,
-    description:
-      'Full Stack Developer for Adeslas client. I maintained and resolved issues for Adeslas refund web app, modified central database parameters and exported information.',
     technologies: [TECHNOLOGIES.angular, TECHNOLOGIES.net]
   }
 ];

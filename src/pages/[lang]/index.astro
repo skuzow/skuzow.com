@@ -1,0 +1,9 @@
+---
+import { i18nStaticPaths } from '@/i18n/ui';
+
+import HomePage from '@/components/home/index.astro';
+
+export const getStaticPaths = () => i18nStaticPaths();
+---
+
+<HomePage />

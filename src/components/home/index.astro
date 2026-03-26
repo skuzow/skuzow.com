@@ -1,0 +1,21 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { useTranslations } from '@/i18n/utils';
+
+import About from '@/components/home/sections/About.astro';
+import Projects from '@/components/home/sections/Projects.astro';
+import Experiences from '@/components/home/sections/Experiences.astro';
+// import Posts from '@/components/home/sections/Posts.astro';
+
+const t = useTranslations(Astro.currentLocale);
+---
+
+<Layout title={t.title} description={t.description}>
+  <About />
+
+  <Projects />
+
+  <Experiences />
+
+  <!-- <Posts /> -->
+</Layout>

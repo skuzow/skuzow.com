@@ -1,23 +1,32 @@
 ---
 import { LinkedinIcon, GithubIcon } from 'lucide-vue-next';
 
+import { languages } from '@/i18n/ui';
+import { useLang, useTranslations, useLocaleUrl } from '@/i18n/utils';
+
 import Link from '@/components/common/Link.astro';
 import LogoIcon from '@/components/icons/LogoIcon.astro';
 import { Button } from '@/components/ui/button';
+import LangToggle from '@/components/nav/LangToggle.vue';
 import ThemeToggle from '@/components/nav/ThemeToggle.vue';
+
+const lang = useLang(Astro.currentLocale);
+
+const t = useTranslations(Astro.currentLocale);
+const url = useLocaleUrl(Astro.currentLocale);
 ---
 
 <header class="bg-background/80 sticky top-0 z-10 py-4 backdrop-blur-md">
   <nav class="mx-auto flex w-full max-w-4xl flex-1 justify-between px-8">
     <Link
       id="home-link"
-      href="/"
-      title="Home"
+      href={url()}
+      title={t.home.title}
       newTab={false}
       class="flex items-center gap-2.5"
     >
       <LogoIcon size={30} />
-      <span class="font-mono font-medium">skuzow.com</span>
+      <span class="font-mono font-medium">skuzow</span>
     </Link>
 
     <div class="flex items-center gap-1">
@@ -39,17 +48,29 @@ import ThemeToggle from '@/components/nav/ThemeToggle.vue';
         </Button>
       </Link>
 
+      <LangToggle
+        client:load
+        currentLang={lang}
+        currentPath={Astro.url.pathname}
+      />
+
       <ThemeToggle client:load />
     </div>
   </nav>
 </header>
 
-<script>
+<script is:inline define:vars={{ languages }}>
   document.addEventListener('astro:page-load', () => {
     const homeLink = document.getElementById('home-link');
 
     homeLink?.addEventListener('click', (event) => {
-      const isHomePage: boolean = window.location.pathname === '/';
+      const path = window.location.pathname.replace(/\/$/, '') || '/';
+      const segments = path.split('/').filter(Boolean);
+
+      const isHomePage =
+        segments.length === 0 ||
+        (segments.length === 1 && segments[0] in languages);
+
       if (!isHomePage) return;
 
       event.preventDefault();

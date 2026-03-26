@@ -1,11 +1,13 @@
 ---
+import { useTranslations } from '@/i18n/utils';
+
 import Section from '@/components/common/Section.astro';
 
-import { type SectionProps as Props } from '@/constants/sections';
+import { SECTIONS } from '@/constants/sections';
 
-const { section } = Astro.props;
+const t = useTranslations(Astro.currentLocale);
 ---
 
-<Section id={section.label} title="posts">
+<Section id={SECTIONS.posts.label} title={t.posts.title}>
   <p>posts content</p>
 </Section>

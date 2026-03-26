@@ -41,11 +41,7 @@ watch(theme, () => {
 <template>
   <DropdownMenu>
     <DropdownMenuTrigger as-child>
-      <Button
-        id="radix-vue-dropdown-menu-trigger-1"
-        variant="ghost"
-        size="icon"
-      >
+      <Button variant="ghost" size="icon">
         <SunIcon :size="18" class="scale-100 dark:scale-0" />
         <MoonIcon :size="18" class="absolute scale-0 dark:scale-100" />
         <span class="sr-only">Toggle theme</span>

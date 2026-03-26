@@ -1,0 +1,9 @@
+---
+import { i18nStaticPaths } from '@/i18n/ui';
+
+import ProjectsPage from '@/components/projects/index.astro';
+
+export const getStaticPaths = () => i18nStaticPaths();
+---
+
+<ProjectsPage />

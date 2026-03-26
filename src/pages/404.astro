@@ -2,11 +2,15 @@
 import { HomeIcon } from 'lucide-vue-next';
 
 import Layout from '@/layouts/Layout.astro';
+import { useTranslations, useLocaleUrl } from '@/i18n/utils';
 
 import Section from '@/components/common/Section.astro';
 import LogoIcon from '@/components/icons/LogoIcon.astro';
 import Link from '@/components/common/Link.astro';
 import { Button } from '@/components/ui/button';
+
+const t = useTranslations(Astro.currentLocale);
+const url = useLocaleUrl(Astro.currentLocale);
 ---
 
 <Layout title="404: Not Found" description="404 Page Not Found.">
@@ -24,12 +28,17 @@ import { Button } from '@/components/ui/button';
       </h1>
 
       <div>
-        <h2 class="mb-3.5 text-xl font-semibold">PAGE NOT FOUND</h2>
+        <h2 class="mb-3.5 text-xl font-semibold">{t.notFound.title}</h2>
 
-        <Link href="/" title="Home" newTab={false} underline={false}>
+        <Link
+          href={url()}
+          title={t.home.title}
+          newTab={false}
+          underline={false}
+        >
           <Button class="gap-2">
             <HomeIcon size={16} />
-            Back Home
+            {t.notFound.buttons.backHome}
           </Button>
         </Link>
       </div>
