@@ -20,7 +20,7 @@ const url = useLocaleUrl(Astro.currentLocale);
   <nav class="mx-auto flex w-full max-w-4xl flex-1 justify-between px-8">
     <Link
       id="home-link"
-      href={url('/')}
+      href={url()}
       title={t.home.title}
       newTab={false}
       class="flex items-center gap-2.5"

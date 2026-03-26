@@ -29,7 +29,7 @@ const url = useLocaleUrl(Astro.currentLocale);
       <div>
         <h2 class="mb-3.5 text-xl font-semibold">PAGE NOT FOUND</h2>
 
-        <Link href={url('/')} title="Home" newTab={false} underline={false}>
+        <Link href={url()} title="Home" newTab={false} underline={false}>
           <Button class="gap-2">
             <HomeIcon size={16} />
             Back Home

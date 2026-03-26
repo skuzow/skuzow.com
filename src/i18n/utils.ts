@@ -12,5 +12,5 @@ export function useTranslations(lang: string | undefined) {
 
 export function useLocaleUrl(locale: string | undefined) {
   const lang = useLang(locale);
-  return (path: string) => getRelativeLocaleUrl(lang, path);
+  return (path?: string) => getRelativeLocaleUrl(lang, path);
 }
